@@ -8,12 +8,11 @@
     "repertoireHighlights": [],
     "bio": "",
     "photo": {
-      "path": "/assets/people/barbora-horakova.png",
+      "path": "/assets/people/barbora-horakova.jpg",
       "alt": "Portrait of Barbora Horáková",
       "credit": "Operabase",
       "sourceUrl": "https://data.operabase.com/profiles/24111922-da77-453c-8722-32123e4bff67/barbora-horakova-large.png"
     },
-    "operabaseUrl": "https://operabase.com/barbora-horakova-a105391",
     "website": ""
   },
   {
@@ -24,12 +23,11 @@
     "repertoireHighlights": [],
     "bio": "",
     "photo": {
-      "path": "/assets/people/nicole-chevalier.png",
+      "path": "/assets/people/nicole-chevalier.jpg",
       "alt": "Portrait of Nicole Chevalier",
       "credit": "Operabase",
       "sourceUrl": "https://data.operabase.com/profiles/88ee12d3-8a83-43bc-8a4f-61cf99c44fda/nicole-chevalier-large.png"
     },
-    "operabaseUrl": "https://operabase.com/nicole-chevalier-a13120",
     "website": ""
   },
   {
@@ -40,13 +38,12 @@
     "repertoireHighlights": [],
     "bio": "",
     "photo": {
-      "path": "/assets/people/hailey-clark.png",
+      "path": "/assets/people/hailey-clark.jpg",
       "alt": "Portrait of Hailey Clark",
       "credit": "Operabase",
       "sourceUrl": "https://data.operabase.com/profiles/f2dfdd80-c87d-4daf-9956-390a82778dba/hailey-clark-large.png"
     },
-    "operabaseUrl": "https://operabase.com/hailey-clark-a20393",
-    "website": ""
+    "website": "http://www.haileyclarksoprano.com/home.html"
   },
   {
     "slug": "lindsey-reynolds",
@@ -61,8 +58,7 @@
       "credit": "Operabase",
       "sourceUrl": "https://data.operabase.com/profiles/8954d9b4-18d1-4c9f-a81b-37841b402745/lindsey-reynolds-large.png"
     },
-    "operabaseUrl": "https://operabase.com/lindsey-reynolds-a99653",
-    "website": ""
+    "website": "https://www.lindseyreynolds-soprano.com/"
   },
   {
     "slug": "elizabeth-reiter",
@@ -77,8 +73,7 @@
       "credit": "Operabase",
       "sourceUrl": "https://data.operabase.com/profiles/c38fa4c8-7897-4141-81d5-718ed3bc3c35/elizabeth-reiter-large.png"
     },
-    "operabaseUrl": "https://operabase.com/elizabeth-reiter-a4861",
-    "website": ""
+    "website": "https://www.elizabethreiter.com/"
   },
   {
     "slug": "ruby-dibble",
@@ -94,8 +89,7 @@
       "credit": "Operabase",
       "sourceUrl": "https://data.operabase.com/profiles/76a2f707-f1ae-45d5-89e3-b0279336067d/ruby-dibble-large.png"
     },
-    "operabaseUrl": "https://operabase.com/ruby-dibble-a87010",
-    "website": ""
+    "website": "https://www.rubydibble.com/"
   },
   {
     "slug": "theo-hoffman",
@@ -111,8 +105,7 @@
       "credit": "Operabase",
       "sourceUrl": "https://data.operabase.com/profiles/186e0787-1a7e-4d71-88bf-8ea0b3a506bd/theo-hoffman-large.png"
     },
-    "operabaseUrl": "https://operabase.com/theo-hoffman-a31178",
-    "website": ""
+    "website": "https://www.theo-hoffman.com/"
   },
   {
     "slug": "szymon-komasa",
@@ -127,7 +120,6 @@
       "credit": "",
       "sourceUrl": ""
     },
-    "operabaseUrl": "https://operabase.com/szymon-komasa-a21089",
     "website": ""
   },
   {
@@ -138,13 +130,12 @@
     "repertoireHighlights": [],
     "bio": "",
     "photo": {
-      "path": "/assets/people/matthew-anchel.png",
+      "path": "/assets/people/matthew-anchel.jpg",
       "alt": "Portrait of Matthew Anchel",
       "credit": "Operabase",
       "sourceUrl": "https://data.operabase.com/profiles/14a8cdce-6630-40ac-be42-5caa108efe1a/matthew-anchel-large.png"
     },
-    "operabaseUrl": "https://operabase.com/matthew-anchel-a11936",
-    "website": ""
+    "website": "https://www.matthewanchel.com/"
     }
   ]
 }

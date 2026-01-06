@@ -68,10 +68,6 @@ function safeJoinUrl(baseUrl, pathname) {
   return `${base}${pathname.startsWith("/") ? "" : "/"}${pathname}`;
 }
 
-function operabaseSearchUrl(query) {
-  return `https://www.operabase.com/search/en?q=${encodeURIComponent(query)}`;
-}
-
 function ensureTrailingSlash(p) {
   return p.endsWith("/") ? p : `${p}/`;
 }
@@ -136,10 +132,9 @@ async function renderRosterSection({ site, artists, title, intro }) {
     <a href="${escapeHtml(href)}"><h3>${escapeHtml(artist.name)}</h3></a>
     <p class="meta">${escapeHtml([type, artist.location].filter(Boolean).join(" · "))}</p>
     ${artist.managementNotes ? `<p class="meta artist-card__note">${escapeHtml(artist.managementNotes)}</p>` : ""}
-    <div class="tagrow">
-      ${artist.operabaseUrl ? `<a class="tag" href="${escapeHtml(artist.operabaseUrl)}" target="_blank" rel="noopener noreferrer">Operabase profile</a>` : `<a class="tag" href="${escapeHtml(operabaseSearchUrl(artist.name))}" target="_blank" rel="noopener noreferrer">Operabase search</a>`}
-      ${artist.website ? `<a class="tag" href="${escapeHtml(artist.website)}" target="_blank" rel="noopener noreferrer">Website</a>` : ""}
-    </div>
+    ${artist.website ? `<div class="tagrow">
+      <a class="tag" href="${escapeHtml(artist.website)}" target="_blank" rel="noopener noreferrer">Website</a>
+    </div>` : ""}
   </div>
 </article>`;
     })
@@ -310,7 +305,6 @@ ${renderContactStrip({ site })}`,
 }
 
 async function renderArtistPage({ site, artist }) {
-  const operabaseLink = artist.operabaseUrl || operabaseSearchUrl(artist.name);
   const portraitPath = (await assetExistsInDist(artist.photo?.path)) ? artist.photo.path : "/assets/people/placeholder.svg";
   const portraitUrl = withBase(site, portraitPath);
   const portraitAlt = artist.photo?.alt || `Portrait of ${artist.name}`;
@@ -343,8 +337,7 @@ async function renderArtistPage({ site, artist }) {
         <div class="kvs">
           ${artistLabel(artist) ? `<div class="kv"><strong>Discipline</strong><span>${escapeHtml(artistLabel(artist))}</span></div>` : ""}
           ${artist.location ? `<div class="kv"><strong>Based in</strong><span>${escapeHtml(artist.location)}</span></div>` : ""}
-          <div class="kv"><strong>Operabase</strong><a href="${escapeHtml(operabaseLink)}" target="_blank" rel="noopener noreferrer">${escapeHtml(artist.operabaseUrl ? "View profile" : "Search")}</a></div>
-          ${artist.website ? `<div class="kv"><strong>Website</strong><a href="${escapeHtml(artist.website)}" target="_blank" rel="noopener noreferrer">Open</a></div>` : ""}
+          ${artist.website ? `<div class="kv"><strong>Website</strong><a href="${escapeHtml(artist.website)}" target="_blank" rel="noopener noreferrer">Visit site</a></div>` : ""}
         </div>
       </aside>
       <div class="notice">Need a full résumé or media links? <a href="${escapeHtml(withBase(site, "/contact/"))}">Contact us</a>.</div>
@@ -385,6 +378,7 @@ async function renderContact({ site, team }) {
         "<img src=\"" + escapeHtml(portraitUrl) + "\" alt=\"" + escapeHtml(portraitAlt) + "\" loading=\"lazy\" decoding=\"async\" style=\"width: 180px; height: 180px; border-radius: 50%; object-fit: cover; object-position: " + positionStyle + "; margin-bottom: 16px; border: 1px solid var(--border);\" />" +
         "<div style=\"font-weight: 500; margin-bottom: 4px;\">" + escapeHtml(member.name) + "</div>" +
         "<div style=\"font-size: 14px; opacity: 0.6;\">" + escapeHtml(member.title || "") + "</div>" +
+        (member.email ? "<div style=\"font-size: 14px; margin-top: 8px;\"><a href=\"mailto:" + escapeHtml(member.email) + "\" style=\"opacity: 0.8;\">" + escapeHtml(member.email) + "</a></div>" : "") +
       "</div>";
         })
       )).join("")}
