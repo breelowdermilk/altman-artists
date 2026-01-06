@@ -378,10 +378,11 @@ async function renderContact({ site, team }) {
       ${(await Promise.all(
         resolvedTeam.map(async (member) => {
           const portraitPath = (await assetExistsInDist(member.photo?.path)) ? member.photo.path : "/assets/people/placeholder.svg";
+          const portraitUrl = withBase(site, portraitPath);
           const portraitAlt = member.photo?.alt || "Portrait of " + member.name;
           const positionStyle = member.slug === "summer-hassan" ? "center 35%" : "center";
           return "<div style=\"text-align: center;\">" +
-        "<img src=\"" + escapeHtml(portraitPath) + "\" alt=\"" + escapeHtml(portraitAlt) + "\" loading=\"lazy\" decoding=\"async\" style=\"width: 180px; height: 180px; border-radius: 50%; object-fit: cover; object-position: " + positionStyle + "; margin-bottom: 16px; border: 1px solid var(--border);\" />" +
+        "<img src=\"" + escapeHtml(portraitUrl) + "\" alt=\"" + escapeHtml(portraitAlt) + "\" loading=\"lazy\" decoding=\"async\" style=\"width: 180px; height: 180px; border-radius: 50%; object-fit: cover; object-position: " + positionStyle + "; margin-bottom: 16px; border: 1px solid var(--border);\" />" +
         "<div style=\"font-weight: 500; margin-bottom: 4px;\">" + escapeHtml(member.name) + "</div>" +
         "<div style=\"font-size: 14px; opacity: 0.6;\">" + escapeHtml(member.title || "") + "</div>" +
       "</div>";
