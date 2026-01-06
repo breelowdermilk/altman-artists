@@ -22,5 +22,17 @@
       "credit": "",
       "sourceUrl": ""
     }
+  },
+  {
+    "slug": "tyler-zimmerman",
+    "name": "Tyler Zimmerman",
+    "title": "Artist Manager",
+    "bio": "",
+    "photo": {
+      "path": "/assets/people/tyler-zimmerman.png",
+      "alt": "Portrait of Tyler Zimmerman",
+      "credit": "",
+      "sourceUrl": ""
+    }
   }
 ]

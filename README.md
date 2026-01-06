@@ -1,4 +1,4 @@
-# Opera Agent Website
+# Altman Artists Website
 
 A high-performance, static website for an opera agency.
 
@@ -38,11 +38,18 @@ The site is designed to be hosted on any static provider (Netlify, Vercel, GitHu
 - **Build command:** `npm run build`
 - **Publish directory:** `dist/`
 
+#### GitHub Pages (quick)
+This repo includes a workflow at `.github/workflows/deploy-pages.yml` that builds and deploys `dist/` to GitHub Pages on every push to `main`.
+
+Notes:
+- For a repo Pages site (`https://USER.github.io/REPO/`), the workflow sets `BASE_PATH` automatically so links/assets work under `/REPO/`.
+- The `/admin` CMS is configured for Netlify Identity + Git Gateway (`backend: git-gateway`) and won’t work on GitHub Pages without reconfiguring the CMS backend.
+
 ### Data Structure
 The `data/artists.json` file is the "database". It is managed by the CMS, but can also be edited manually. Ensure all artist slugs remain in `kebab-case`.
 
 
-Static, data-driven website for an opera agent roster (artist pages + Operabase links), with no external build dependencies.
+Static, data-driven website for an opera agency roster (artist pages + Operabase links), with no external build dependencies.
 
 ## Quick start
 
@@ -63,8 +70,8 @@ Static, data-driven website for an opera agent roster (artist pages + Operabase 
 
 If you have a headshot file locally (not a URL), you can crop+resize it into `src/assets/people/`:
 
-- Example (Szymon): `node scripts/import-headshot.mjs --src /path/to/IMG_9487.jpeg --slug szymon-komasa`
-- Example (Summer): `node scripts/import-headshot.mjs --src /path/to/summer-hasan.jpg --slug summer-hassan`
+- Example (Szymon): `node scripts/import-headshot.mjs --src /path/to/szymon-komasa.jpg --slug szymon-komasa`
+- Example (Summer): `node scripts/import-headshot.mjs --src /path/to/summer-hassan.jpg --slug summer-hassan`
 
 ## Deploy
 

@@ -21,6 +21,47 @@ function normalizeBaseUrl(url) {
   return trimmed.replace(/\/+$/, "");
 }
 
+function normalizeBasePath(basePath) {
+  const trimmed = String(basePath ?? "").trim();
+  if (!trimmed || trimmed === "/") return "";
+
+  const withLeadingSlash = trimmed.startsWith("/") ? trimmed : `/${trimmed}`;
+  return withLeadingSlash.replace(/\/+$/, "");
+}
+
+function resolveBasePath(site) {
+  return normalizeBasePath(process.env.BASE_PATH ?? site.basePath);
+}
+
+function resolveBaseUrl(site) {
+  const envBaseUrl = normalizeBaseUrl(process.env.BASE_URL);
+  if (envBaseUrl) return envBaseUrl;
+  return normalizeBaseUrl(site.baseUrl);
+}
+
+function withBase(site, urlPath) {
+  if (!urlPath?.startsWith("/")) return urlPath;
+  const basePath = resolveBasePath(site);
+  return basePath ? `${basePath}${urlPath}` : urlPath;
+}
+
+function baseUrlHasPathname(baseUrl) {
+  try {
+    const parsed = new URL(baseUrl);
+    return parsed.pathname && parsed.pathname !== "/";
+  } catch {
+    return false;
+  }
+}
+
+function sitePathForUrl({ site, baseUrl, urlPath }) {
+  if (!urlPath?.startsWith("/")) return urlPath;
+  const basePath = resolveBasePath(site);
+  if (!basePath) return urlPath;
+  if (baseUrl && baseUrlHasPathname(baseUrl)) return urlPath;
+  return `${basePath}${urlPath}`;
+}
+
 function safeJoinUrl(baseUrl, pathname) {
   const base = normalizeBaseUrl(baseUrl);
   if (!base) return "";
@@ -79,15 +120,17 @@ async function renderRosterSection({ site, artists, title, intro }) {
 
   const cards = (await Promise.all(
     artists.map(async (artist) => {
-      const href = `/artists/${artist.slug}/`;
+      const artistPath = `/artists/${artist.slug}/`;
+      const href = withBase(site, artistPath);
       const type = artistLabel(artist);
       const searchable = normalizeForSearch([artist.name, type, artist.location].filter(Boolean).join(" "));
       const portraitPath = (await assetExistsInDist(artist.photo?.path)) ? artist.photo.path : "/assets/people/placeholder.svg";
+      const portraitUrl = withBase(site, portraitPath);
       const portraitAlt = artist.photo?.alt || `Portrait of ${artist.name}`;
 
       return `<article class="artist-card" data-artist-card data-name="${escapeHtml(searchable)}" data-type="${escapeHtml(type)}">
   <a class="artist-card__media" href="${escapeHtml(href)}" aria-label="${escapeHtml(artist.name)}">
-    <img src="${escapeHtml(portraitPath)}" alt="${escapeHtml(portraitAlt)}" loading="lazy" decoding="async" />
+    <img src="${escapeHtml(portraitUrl)}" alt="${escapeHtml(portraitAlt)}" loading="lazy" decoding="async" />
   </a>
   <div class="artist-card__body">
     <a href="${escapeHtml(href)}"><h3>${escapeHtml(artist.name)}</h3></a>
@@ -131,7 +174,8 @@ async function renderFeaturedArtistsGrid({ site, artists }) {
 
   const artistLinks = featured.map(artist => {
     const type = artistLabel(artist);
-    return `<a href="/artists/${escapeHtml(artist.slug)}/" class="artist">
+    const href = withBase(site, `/artists/${artist.slug}/`);
+    return `<a href="${escapeHtml(href)}" class="artist">
   <h3>${escapeHtml(artist.name)}</h3>
   <span>${escapeHtml(type)}</span>
 </a>`;
@@ -140,7 +184,7 @@ async function renderFeaturedArtistsGrid({ site, artists }) {
   return `<section class="roster-featured">
   <div class="roster-header">
     <h2>Featured Artists</h2>
-    <a href="/artists/">View All</a>
+    <a href="${escapeHtml(withBase(site, "/artists/"))}">View All</a>
   </div>
   <div class="artists-grid">
     ${artistLinks}
@@ -149,8 +193,10 @@ async function renderFeaturedArtistsGrid({ site, artists }) {
 }
 
 function renderLayout({ site, title, description, canonicalPath, content }) {
-  const baseUrl = normalizeBaseUrl(site.baseUrl);
-  const canonical = canonicalPath ? safeJoinUrl(baseUrl, canonicalPath) : "";
+  const baseUrl = resolveBaseUrl(site);
+  const canonical = canonicalPath
+    ? safeJoinUrl(baseUrl, sitePathForUrl({ site, baseUrl, urlPath: canonicalPath }))
+    : "";
   const metaDescription = (description || site.description || "").trim();
   const fullTitle = title ? `${title} · ${site.agencyName}` : site.agencyName;
   const year = new Date().getFullYear();
@@ -171,25 +217,23 @@ function renderLayout({ site, title, description, canonicalPath, content }) {
     ${canonical ? `<meta property="og:url" content="${escapeHtml(canonical)}" />` : ""}
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary" />
-    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
-    <link rel="preload" href="/assets/logo.svg" as="image" type="image/svg+xml" />
+    <link rel="icon" href="${escapeHtml(withBase(site, "/assets/favicon.svg"))}" type="image/svg+xml" />
+    <link rel="preload" href="${escapeHtml(withBase(site, "/assets/logo.svg"))}" as="image" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/styles.css" />
-    <script defer src="/assets/site.js"></script>
+    <link rel="stylesheet" href="${escapeHtml(withBase(site, "/assets/styles.css"))}" />
+    <script defer src="${escapeHtml(withBase(site, "/assets/site.js"))}"></script>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
     <header>
       <div class="container">
         <nav class="nav" aria-label="Primary">
-          <a class="brand" href="/" data-nav>Altman Artists</a>
+          <a class="brand" href="${escapeHtml(withBase(site, "/"))}" data-nav>Altman Artists</a>
           <div class="navlinks">
-            <a class="navlink" href="/artists/" data-nav>Artists</a>
-            <a class="navlink" href="/about/" data-nav>About</a>
-            <a class="navlink" href="/contact/" data-nav>Contact</a>
-            <a class="navlink" href="${escapeHtml(site.links?.operabase || "https://www.operabase.com/")}" target="_blank" rel="noopener noreferrer">Operabase</a>
+            <a class="navlink" href="${escapeHtml(withBase(site, "/artists/"))}" data-nav>Artists</a>
+            <a class="navlink" href="${escapeHtml(withBase(site, "/contact/"))}" data-nav>Contact</a>
           </div>
         </nav>
       </div>
@@ -219,7 +263,8 @@ async function renderHome({ site, artists }) {
     description: site.description,
     canonicalPath: "/",
     content: `<section class="hero">
-  <img src="/assets/logo.svg" alt="Altman Artists" class="hero-logo" />
+  <img src="${escapeHtml(withBase(site, "/assets/logo.svg"))}" alt="Altman Artists" class="hero-logo" />
+  <a class="btn" href="${escapeHtml(withBase(site, "/artists/"))}">Explore Roster</a>
 </section>
 ${await renderFeaturedArtistsGrid({ site, artists })}
 ${renderContactStrip({ site })}`,
@@ -267,6 +312,7 @@ ${renderContactStrip({ site })}`,
 async function renderArtistPage({ site, artist }) {
   const operabaseLink = artist.operabaseUrl || operabaseSearchUrl(artist.name);
   const portraitPath = (await assetExistsInDist(artist.photo?.path)) ? artist.photo.path : "/assets/people/placeholder.svg";
+  const portraitUrl = withBase(site, portraitPath);
   const portraitAlt = artist.photo?.alt || `Portrait of ${artist.name}`;
 
   return renderLayout({
@@ -280,7 +326,7 @@ async function renderArtistPage({ site, artist }) {
   ${artist.managementNotes ? `<p class="meta">${escapeHtml(artist.managementNotes)}</p>` : ""}
   <div class="profile">
     <figure class="portrait">
-      <img src="${escapeHtml(portraitPath)}" alt="${escapeHtml(portraitAlt)}" loading="eager" />
+      <img src="${escapeHtml(portraitUrl)}" alt="${escapeHtml(portraitAlt)}" loading="eager" />
       ${artist.photo?.credit || artist.photo?.sourceUrl ? `<figcaption class="caption">${escapeHtml(artist.photo?.credit || "")}${artist.photo?.sourceUrl ? ` · <a href="${escapeHtml(artist.photo.sourceUrl)}" target="_blank" rel="noopener noreferrer">Source</a>` : ""}</figcaption>` : ""}
     </figure>
     <div>
@@ -301,7 +347,7 @@ async function renderArtistPage({ site, artist }) {
           ${artist.website ? `<div class="kv"><strong>Website</strong><a href="${escapeHtml(artist.website)}" target="_blank" rel="noopener noreferrer">Open</a></div>` : ""}
         </div>
       </aside>
-      <div class="notice">Need a full résumé or media links? <a href="/contact/">Contact us</a>.</div>
+      <div class="notice">Need a full résumé or media links? <a href="${escapeHtml(withBase(site, "/contact/"))}">Contact us</a>.</div>
     </div>
   </div>
 </section>`,
@@ -319,50 +365,33 @@ async function renderContact({ site, team }) {
     title: "Contact",
     description: `Contact ${site.agencyName} for bookings and inquiries.`,
     canonicalPath: "/contact/",
-    content: `<section class="page">
+    content: `<section class="page" style="text-align: center; max-width: 800px; margin: 80px auto; padding: 0 24px;">
   <h1>Contact</h1>
-  <p>For engagements, availability, and general inquiries, reach out directly.</p>
-  <div class="split">
-    <article class="panel">
-      <h2 style="margin: 0 0 10px; font-size: 18px;">Message</h2>
-      <p class="meta">This site is static. The quickest way to connect is email.</p>
-      ${email ? `<p><a class="cta" href="mailto:${escapeHtml(email)}"><span>Email ${escapeHtml(site.contact?.name || "us")}</span><small>${escapeHtml(email)}</small></a></p>` : ""}
-      <div class="notice fine">If you want a contact form, connect this page to a form provider (Netlify Forms, Formspree, etc.).</div>
-    </article>
-    <aside class="panel">
-      ${
-        resolvedTeam.length
-          ? `<div class="team" aria-label="Team">
-  ${(await Promise.all(
-    resolvedTeam.map(async (member) => {
-      const portraitPath = (await assetExistsInDist(member.photo?.path)) ? member.photo.path : "/assets/people/placeholder.svg";
-      const portraitAlt = member.photo?.alt || `Portrait of ${member.name}`;
-      return `<div class="teamrow">
-  <img class="teamimg" src="${escapeHtml(portraitPath)}" alt="${escapeHtml(portraitAlt)}" loading="lazy" decoding="async" />
-  <div>
-    <div style="font-weight: 650;">${escapeHtml(member.name)}</div>
-    <div class="fine">${escapeHtml(member.title || "")}</div>
-  </div>
-</div>`;
-    })
-  )).join("\n")}
-</div>`
-          : ""
-      }
-      <div class="kvs">
-        ${
-          resolvedTeam.length
-            ? `<div class="kv"><strong>Team</strong><span>${resolvedTeam
-                .map((m) => `${escapeHtml(m.name)}${m.title ? ` — ${escapeHtml(m.title)}` : ""}`)
-                .join("<br/>")}</span></div>`
-            : ""
-        }
-        ${email ? `<div class="kv"><strong>Email</strong><a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></div>` : ""}
-        ${phone ? `<div class="kv"><strong>Phone</strong><a href="tel:${escapeHtml(phone.replace(/[^\d+]/g, ""))}">${escapeHtml(phone)}</a></div>` : ""}
-        ${location ? `<div class="kv"><strong>Location</strong><span>${escapeHtml(location)}</span></div>` : ""}
-      </div>
-    </aside>
-  </div>
+  <p style="margin-bottom: 40px;">For engagements, availability, and general inquiries.</p>
+  ${email ? `<p style="margin-bottom: 20px;"><a href="mailto:${escapeHtml(email)}" style="font-size: 18px; font-weight: 400;">${escapeHtml(email)}</a></p>` : ""}
+  ${phone ? `<p style="margin-bottom: 60px;"><a href="tel:${escapeHtml(phone.replace(/[^\d+]/g, ""))}" style="font-size: 18px; font-weight: 400;">${escapeHtml(phone)}</a></p>` : ""}
+  ${
+    resolvedTeam.length
+      ? `<div style="margin-top: 60px;">
+    <h2 style="font-size: 24px; margin-bottom: 40px; font-weight: 400;">Team</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; max-width: 700px; margin: 0 auto;">
+      ${(await Promise.all(
+        resolvedTeam.map(async (member) => {
+          const portraitPath = (await assetExistsInDist(member.photo?.path)) ? member.photo.path : "/assets/people/placeholder.svg";
+          const portraitAlt = member.photo?.alt || "Portrait of " + member.name;
+          const positionStyle = member.slug === "summer-hassan" ? "center 35%" : "center";
+          return "<div style=\"text-align: center;\">" +
+        "<img src=\"" + escapeHtml(portraitPath) + "\" alt=\"" + escapeHtml(portraitAlt) + "\" loading=\"lazy\" decoding=\"async\" style=\"width: 180px; height: 180px; border-radius: 50%; object-fit: cover; object-position: " + positionStyle + "; margin-bottom: 16px; border: 1px solid var(--border);\" />" +
+        "<div style=\"font-weight: 500; margin-bottom: 4px;\">" + escapeHtml(member.name) + "</div>" +
+        "<div style=\"font-size: 14px; opacity: 0.6;\">" + escapeHtml(member.title || "") + "</div>" +
+      "</div>";
+        })
+      )).join("")}
+    </div>
+  </div>`
+      : ""
+  }
+  ${location ? `<p style="opacity: 0.6; margin-top: 60px;">${escapeHtml(location)}</p>` : ""}
 </section>`,
   });
 }
@@ -376,19 +405,20 @@ function renderNotFound({ site }) {
     content: `<section class="page">
   <h1>Page not found</h1>
   <p>The page you’re looking for doesn’t exist. Try the roster.</p>
-  <p><a class="cta" href="/artists/"><span>View artists</span><small>/artists/</small></a></p>
+  <p><a class="cta" href="${escapeHtml(withBase(site, "/artists/"))}"><span>View artists</span><small>/artists/</small></a></p>
 </section>`,
   });
 }
 
 function renderRobots({ site }) {
-  const baseUrl = normalizeBaseUrl(site.baseUrl);
-  const sitemap = baseUrl ? `${baseUrl}/sitemap.xml` : "/sitemap.xml";
+  const baseUrl = resolveBaseUrl(site);
+  const sitemapPath = sitePathForUrl({ site, baseUrl, urlPath: "/sitemap.xml" });
+  const sitemap = baseUrl ? safeJoinUrl(baseUrl, sitemapPath) : sitemapPath;
   return `User-agent: *\nAllow: /\n\nSitemap: ${sitemap}\n`;
 }
 
 function renderSitemap({ site, artists }) {
-  const baseUrl = normalizeBaseUrl(site.baseUrl);
+  const baseUrl = resolveBaseUrl(site);
   if (!baseUrl) return "";
 
   const urls = [
@@ -402,7 +432,10 @@ function renderSitemap({ site, artists }) {
   return `<?xml version="1.0" encoding="UTF-8"?>\n` +
     `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
     urls
-      .map((p) => `  <url><loc>${escapeHtml(safeJoinUrl(baseUrl, ensureTrailingSlash(p)))}</loc></url>\n`)
+      .map((p) => {
+        const urlPath = sitePathForUrl({ site, baseUrl, urlPath: ensureTrailingSlash(p) });
+        return `  <url><loc>${escapeHtml(safeJoinUrl(baseUrl, urlPath))}</loc></url>\n`;
+      })
       .join("") +
     `</urlset>\n`;
 }
@@ -458,16 +491,11 @@ export async function buildSite() {
   await fs.mkdir(path.join(distDir, "contact"), { recursive: true });
 
   await copyDir(path.join(srcDir, "assets"), path.join(distDir, "assets"));
+  await fs.writeFile(path.join(distDir, ".nojekyll"), "", "utf8");
   
   // Copy admin if it exists
   try {
     await copyDir(path.join(srcDir, "admin"), path.join(distDir, "admin"));
-    // Ensure admin isn't styled like the public site.
-    try {
-      await fs.rm(path.join(distDir, "admin", "index.html"), { force: true });
-    } catch {
-      // ignore
-    }
   } catch (e) {
     // It's okay if admin doesn't exist yet
   }

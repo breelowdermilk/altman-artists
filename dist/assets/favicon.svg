@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Opera agent">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Altman Artists">
   <defs>
     <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#b792ff"/>
@@ -9,4 +9,3 @@
   <path d="M26 74c0-26 16-46 38-46s38 20 38 46-16 46-38 46S26 100 26 74Z" fill="url(#g)" opacity=".9"/>
   <path d="M44 74c0-16 9-29 20-29s20 13 20 29-9 29-20 29-20-13-20-29Z" fill="#0b0e14" opacity=".75"/>
 </svg>
-
