@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Variant A: Classic Centered</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #114a81;
+      --mint: #93dcb8;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 300;
+      background: var(--blue);
+      color: var(--mint);
+      min-height: 100vh;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 32px 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+    .logo {
+      font-family: 'Cormorant', serif;
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    nav {
+      display: flex;
+      gap: 48px;
+    }
+    nav a {
+      color: var(--mint);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+    }
+    nav a:hover { opacity: 1; }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 120px 48px;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at center, rgba(147, 220, 184, 0.08) 0%, transparent 60%);
+    }
+    .hero > * {
+      position: relative;
+      z-index: 1;
+    }
+    .hero-overline {
+      font-size: 12px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      opacity: 0.5;
+      margin-bottom: 40px;
+    }
+    .hero h1 {
+      font-family: 'Cormorant', serif;
+      font-size: clamp(48px, 10vw, 100px);
+      font-weight: 300;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 48px;
+    }
+    .hero h1 em {
+      display: block;
+      font-style: italic;
+      font-weight: 300;
+      opacity: 0.7;
+      letter-spacing: 2px;
+    }
+    .hero-divider {
+      width: 60px;
+      height: 1px;
+      background: var(--mint);
+      opacity: 0.3;
+      margin-bottom: 48px;
+    }
+    .hero p {
+      font-size: 16px;
+      line-height: 1.8;
+      opacity: 0.6;
+      max-width: 440px;
+      margin-bottom: 56px;
+    }
+    .btn {
+      padding: 18px 48px;
+      border: 1px solid rgba(147, 220, 184, 0.4);
+      color: var(--mint);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      transition: all 0.3s;
+    }
+    .btn:hover {
+      background: var(--mint);
+      color: var(--blue);
+      border-color: var(--mint);
+    }
+
+    .roster {
+      padding: 120px 64px;
+      border-top: 1px solid rgba(147, 220, 184, 0.1);
+    }
+    .roster-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+    .roster-header h2 {
+      font-family: 'Cormorant', serif;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+    .artists-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(147, 220, 184, 0.1);
+    }
+    .artist {
+      background: var(--blue);
+      padding: 48px 32px;
+      text-align: center;
+      transition: all 0.3s;
+      text-decoration: none;
+      color: var(--mint);
+    }
+    .artist:hover {
+      background: rgba(147, 220, 184, 0.08);
+    }
+    .artist h3 {
+      font-family: 'Cormorant', serif;
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    .artist span {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      opacity: 0.4;
+    }
+
+    .contact {
+      padding: 120px 64px;
+      text-align: center;
+      border-top: 1px solid rgba(147, 220, 184, 0.1);
+    }
+    .contact h2 {
+      font-family: 'Cormorant', serif;
+      font-size: 36px;
+      font-weight: 300;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+    .contact p {
+      font-size: 14px;
+      opacity: 0.5;
+      margin-bottom: 40px;
+    }
+
+    footer {
+      padding: 48px 64px;
+      border-top: 1px solid rgba(147, 220, 184, 0.1);
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      opacity: 0.4;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Altman Artists</div>
+    <nav>
+      <a href="roster.html">Artists</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <p class="hero-overline">Artist Management</p>
+    <h1>Altman<em>Artists</em></h1>
+    <div class="hero-divider"></div>
+    <p>Representing a distinguished roster of opera artists for engagements at the world's leading stages.</p>
+    <a href="roster.html" class="btn">View Roster</a>
+  </section>
+
+  <section class="roster">
+    <div class="roster-header">
+      <h2>The Roster</h2>
+    </div>
+    <div class="artists-grid">
+      <a href="#" class="artist">
+        <h3>Nicole Chevalier</h3>
+        <span>Soprano</span>
+      </a>
+      <a href="#" class="artist">
+        <h3>Barbora Horakova</h3>
+        <span>Director</span>
+      </a>
+      <a href="#" class="artist">
+        <h3>Hailey Clark</h3>
+        <span>Soprano</span>
+      </a>
+      <a href="#" class="artist">
+        <h3>Ruby Dibble</h3>
+        <span>Mezzo-soprano</span>
+      </a>
+      <a href="#" class="artist">
+        <h3>Matthew Anchel</h3>
+        <span>Bass</span>
+      </a>
+      <a href="#" class="artist">
+        <h3>Szymon Komasa</h3>
+        <span>Baritone</span>
+      </a>
+      <a href="#" class="artist">
+        <h3>Lindsey Reynolds</h3>
+        <span>Soprano</span>
+      </a>
+      <a href="#" class="artist">
+        <h3>Elizabeth Reiter</h3>
+        <span>Soprano</span>
+      </a>
+      <a href="#" class="artist">
+        <h3>Theo Hoffman</h3>
+        <span>Tenor</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>Inquiries</h2>
+    <p>For booking and general inquiries</p>
+    <a href="#" class="btn">Contact Us</a>
+  </section>
+
+  <footer>
+    <span>Altman Artists</span>
+    <span>Opera & Classical Voice</span>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mockup 2: Editorial Grid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #114a81;
+      --mint: #93dcb8;
+      --cream: #f8faf9;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--cream);
+      color: var(--blue);
+    }
+
+    header {
+      background: var(--blue);
+      color: var(--mint);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+    }
+    nav a {
+      color: var(--mint);
+      text-decoration: none;
+      margin-left: 40px;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .editorial-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 80vh;
+    }
+    .hero-left {
+      background: var(--blue);
+      color: var(--mint);
+      padding: 80px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero-left h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 64px;
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 32px;
+    }
+    .hero-left h1 em { font-style: italic; }
+    .hero-left p {
+      font-size: 16px;
+      line-height: 1.7;
+      opacity: 0.8;
+      max-width: 400px;
+    }
+    .hero-right {
+      background: var(--mint);
+      padding: 80px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .stat {
+      margin-bottom: 48px;
+    }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 72px;
+      font-weight: 700;
+      color: var(--blue);
+    }
+    .stat-label {
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--blue);
+      opacity: 0.7;
+    }
+
+    .roster-section {
+      padding: 100px 60px;
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 60px;
+      border-bottom: 2px solid var(--blue);
+      padding-bottom: 20px;
+    }
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      font-weight: 400;
+    }
+    .view-all {
+      color: var(--blue);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--blue);
+      padding-bottom: 4px;
+    }
+
+    .artists-editorial {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+    .artist-item {
+      border-top: 1px solid rgba(17, 74, 129, 0.2);
+      padding-top: 24px;
+    }
+    .artist-item:first-child {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+    .artist-item:first-child .artist-name {
+      font-size: 42px;
+    }
+    .artist-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+    .artist-voice {
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--blue);
+      opacity: 0.6;
+    }
+
+    footer {
+      background: var(--blue);
+      color: var(--mint);
+      padding: 60px;
+      text-align: center;
+    }
+    footer p {
+      opacity: 0.6;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Altman Artists</div>
+    <nav>
+      <a href="#">Roster</a>
+      <a href="#">News</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="editorial-hero">
+    <div class="hero-left">
+      <h1>Curating<br><em>Excellence</em><br>in Opera</h1>
+      <p>We represent a select roster of distinguished opera artists, connecting extraordinary talent with the world's leading stages.</p>
+    </div>
+    <div class="hero-right">
+      <div class="stat">
+        <div class="stat-number">9</div>
+        <div class="stat-label">Artists Represented</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Opera Houses Worldwide</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="roster-section">
+    <div class="section-header">
+      <h2>The Roster</h2>
+      <a href="#" class="view-all">View All Artists</a>
+    </div>
+    <div class="artists-editorial">
+      <div class="artist-item">
+        <h3 class="artist-name">Nicole Chevalier</h3>
+        <p class="artist-voice">Soprano</p>
+      </div>
+      <div class="artist-item">
+        <h3 class="artist-name">Barbora Horakova</h3>
+        <p class="artist-voice">Director</p>
+      </div>
+      <div class="artist-item">
+        <h3 class="artist-name">Hailey Clark</h3>
+        <p class="artist-voice">Soprano</p>
+      </div>
+      <div class="artist-item">
+        <h3 class="artist-name">Ruby Dibble</h3>
+        <p class="artist-voice">Mezzo-soprano</p>
+      </div>
+      <div class="artist-item">
+        <h3 class="artist-name">Matthew Anchel</h3>
+        <p class="artist-voice">Bass</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Altman Artists - Artist Management for Opera and Classical Voice</p>
+  </footer>
+</body>
+</html>

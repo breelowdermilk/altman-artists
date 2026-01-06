@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mockup 3: Minimal Elegance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #114a81;
+      --mint: #93dcb8;
+      --white: #ffffff;
+      --light: #f7f9f8;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 300;
+      background: var(--white);
+      color: var(--blue);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 32px 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: 'EB Garamond', serif;
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+    nav {
+      display: flex;
+      gap: 48px;
+    }
+    nav a {
+      color: var(--blue);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+    }
+    nav a:hover { opacity: 1; }
+
+    .hero-minimal {
+      padding: 160px 64px 200px;
+      max-width: 900px;
+    }
+    .hero-minimal h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: 72px;
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 40px;
+    }
+    .hero-minimal h1 em {
+      font-style: italic;
+      color: var(--mint);
+    }
+    .hero-minimal p {
+      font-size: 18px;
+      color: var(--blue);
+      opacity: 0.7;
+      max-width: 500px;
+      margin-bottom: 48px;
+    }
+    .link-arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--blue);
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .link-arrow:hover span { text-decoration: underline; }
+    .link-arrow svg { width: 24px; }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, var(--blue), transparent);
+      margin: 0 64px;
+      opacity: 0.15;
+    }
+
+    .artists-minimal {
+      padding: 100px 64px;
+    }
+    .artists-list {
+      max-width: 700px;
+    }
+    .artist-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(17, 74, 129, 0.1);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .artist-row:hover {
+      padding-left: 16px;
+    }
+    .artist-row:hover .artist-name-min {
+      color: var(--mint);
+    }
+    .artist-name-min {
+      font-family: 'EB Garamond', serif;
+      font-size: 32px;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+    .artist-voice-min {
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+
+    .mint-band {
+      background: var(--mint);
+      padding: 80px 64px;
+      margin-top: 100px;
+    }
+    .mint-band-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .mint-band h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: 36px;
+      font-weight: 400;
+      color: var(--blue);
+    }
+    .contact-btn {
+      padding: 16px 32px;
+      background: var(--blue);
+      color: var(--mint);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    footer {
+      padding: 48px 64px;
+      font-size: 13px;
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Altman Artists</div>
+    <nav>
+      <a href="#">Artists</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero-minimal">
+    <h1>Artist management<br>for <em>opera</em> and<br>classical voice</h1>
+    <p>Representing a curated roster of distinguished artists for engagements at the world's leading opera houses.</p>
+    <a href="#" class="link-arrow">
+      <span>Explore the roster</span>
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+    </a>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="artists-minimal">
+    <div class="artists-list">
+      <div class="artist-row">
+        <span class="artist-name-min">Nicole Chevalier</span>
+        <span class="artist-voice-min">Soprano</span>
+      </div>
+      <div class="artist-row">
+        <span class="artist-name-min">Barbora Horakova</span>
+        <span class="artist-voice-min">Director</span>
+      </div>
+      <div class="artist-row">
+        <span class="artist-name-min">Hailey Clark</span>
+        <span class="artist-voice-min">Soprano</span>
+      </div>
+      <div class="artist-row">
+        <span class="artist-name-min">Ruby Dibble</span>
+        <span class="artist-voice-min">Mezzo-soprano</span>
+      </div>
+      <div class="artist-row">
+        <span class="artist-name-min">Matthew Anchel</span>
+        <span class="artist-voice-min">Bass</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="mint-band">
+    <div class="mint-band-content">
+      <h2>Ready to book an artist?</h2>
+      <a href="#" class="contact-btn">Get in Touch</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>Altman Artists</p>
+  </footer>
+</body>
+</html>

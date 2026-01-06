@@ -1,0 +1,42 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# These lines allow you to work locally if you run `npx decap-server`
+local_backend: true
+
+media_folder: "src/assets/people"
+public_folder: "/assets/people"
+
+collections:
+  - name: "config"
+    label: "Configuration"
+    files:
+      - name: "artists"
+        label: "Artist Roster"
+        file: "data/artists.json"
+        description: "Manage the list of artists on the roster"
+        fields:
+          - label: "Artists"
+            name: "artists"
+            widget: "list"
+            summary: "{{name}} ({{slug}})"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Slug (URL-friendly ID)", name: "slug", widget: "string", pattern: ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "Must be kebab-case (e.g. john-doe)"]}
+              - {label: "Discipline / Voice Type", name: "voiceType", widget: "string", required: false}
+              - {label: "Location", name: "location", widget: "string", required: false}
+              - {label: "Bio", name: "bio", widget: "text", required: false}
+              - {label: "Management Notes", name: "managementNotes", widget: "string", required: false, hint: "Internal or specific booking notes."}
+              - label: "Photo"
+                name: "photo"
+                widget: "object"
+                required: false
+                fields:
+                  - {label: "Image", name: "path", widget: "image"}
+                  - {label: "Alt Text", name: "alt", widget: "string", required: false}
+                  - {label: "Credit", name: "credit", widget: "string", required: false}
+                  - {label: "Source URL", name: "sourceUrl", widget: "string", required: false}
+              - {label: "Operabase URL", name: "operabaseUrl", widget: "string", required: false}
+              - {label: "Website", name: "website", widget: "string", required: false}
+              - {label: "Repertoire Highlights", name: "repertoireHighlights", widget: "list", required: false}

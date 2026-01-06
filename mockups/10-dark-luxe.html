@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mockup 10: Dark Luxe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #114a81;
+      --dark-blue: #0a2d4d;
+      --mint: #93dcb8;
+      --gold: #c9a962;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 300;
+      background: var(--dark-blue);
+      color: var(--mint);
+      min-height: 100vh;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 32px 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      background: linear-gradient(180deg, var(--dark-blue), transparent);
+    }
+    .logo {
+      font-family: 'Cinzel', serif;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+    nav {
+      display: flex;
+      gap: 48px;
+    }
+    nav a {
+      color: var(--mint);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+    }
+    nav a:hover { opacity: 1; }
+
+    .hero-luxe {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 120px 48px;
+      position: relative;
+    }
+    .hero-luxe::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at center, rgba(147, 220, 184, 0.05) 0%, transparent 70%);
+    }
+    .hero-luxe > * {
+      position: relative;
+      z-index: 1;
+    }
+    .hero-overline {
+      font-size: 12px;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      opacity: 0.5;
+      margin-bottom: 32px;
+    }
+    .hero-luxe h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(40px, 8vw, 80px);
+      font-weight: 400;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      line-height: 1.3;
+      margin-bottom: 40px;
+    }
+    .hero-luxe h1 span {
+      display: block;
+      font-style: italic;
+      letter-spacing: 4px;
+      opacity: 0.7;
+    }
+    .hero-divider {
+      width: 80px;
+      height: 1px;
+      background: var(--mint);
+      opacity: 0.3;
+      margin-bottom: 40px;
+    }
+    .hero-luxe p {
+      font-size: 16px;
+      line-height: 1.8;
+      opacity: 0.6;
+      max-width: 500px;
+      margin-bottom: 48px;
+    }
+    .luxe-btn {
+      padding: 18px 48px;
+      border: 1px solid rgba(147, 220, 184, 0.3);
+      color: var(--mint);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      transition: all 0.3s;
+    }
+    .luxe-btn:hover {
+      background: var(--mint);
+      color: var(--dark-blue);
+      border-color: var(--mint);
+    }
+
+    .roster-luxe {
+      padding: 120px 64px;
+      border-top: 1px solid rgba(147, 220, 184, 0.1);
+    }
+    .roster-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+    .roster-header h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+
+    .artists-luxe {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(147, 220, 184, 0.1);
+    }
+    .artist-luxe {
+      background: var(--dark-blue);
+      padding: 48px 32px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .artist-luxe:hover {
+      background: rgba(147, 220, 184, 0.05);
+    }
+    .artist-luxe h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+    .artist-luxe span {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      opacity: 0.4;
+    }
+
+    .contact-luxe {
+      padding: 120px 64px;
+      text-align: center;
+      border-top: 1px solid rgba(147, 220, 184, 0.1);
+    }
+    .contact-luxe h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 32px;
+      font-weight: 400;
+      letter-spacing: 4px;
+      margin-bottom: 16px;
+    }
+    .contact-luxe p {
+      font-size: 14px;
+      opacity: 0.5;
+      margin-bottom: 40px;
+    }
+
+    footer {
+      padding: 48px 64px;
+      border-top: 1px solid rgba(147, 220, 184, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      opacity: 0.4;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Altman Artists</div>
+    <nav>
+      <a href="#">Artists</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero-luxe">
+    <p class="hero-overline">Est. 2024</p>
+    <h1>Altman<br><span>Artists</span></h1>
+    <div class="hero-divider"></div>
+    <p>Representing a distinguished roster of opera artists for engagements at the world's most prestigious stages.</p>
+    <a href="#" class="luxe-btn">View Roster</a>
+  </section>
+
+  <section class="roster-luxe">
+    <div class="roster-header">
+      <h2>The Roster</h2>
+    </div>
+    <div class="artists-luxe">
+      <div class="artist-luxe">
+        <h3>Nicole Chevalier</h3>
+        <span>Soprano</span>
+      </div>
+      <div class="artist-luxe">
+        <h3>Barbora Horakova</h3>
+        <span>Director</span>
+      </div>
+      <div class="artist-luxe">
+        <h3>Hailey Clark</h3>
+        <span>Soprano</span>
+      </div>
+      <div class="artist-luxe">
+        <h3>Ruby Dibble</h3>
+        <span>Mezzo-soprano</span>
+      </div>
+      <div class="artist-luxe">
+        <h3>Matthew Anchel</h3>
+        <span>Bass</span>
+      </div>
+      <div class="artist-luxe">
+        <h3>Szymon Komasa</h3>
+        <span>Baritone</span>
+      </div>
+      <div class="artist-luxe">
+        <h3>Lindsey Reynolds</h3>
+        <span>Soprano</span>
+      </div>
+      <div class="artist-luxe">
+        <h3>Elizabeth Reiter</h3>
+        <span>Soprano</span>
+      </div>
+      <div class="artist-luxe">
+        <h3>Theo Hoffman</h3>
+        <span>Tenor</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-luxe">
+    <h2>Inquiries</h2>
+    <p>For booking and general inquiries</p>
+    <a href="#" class="luxe-btn">Contact Us</a>
+  </section>
+
+  <footer>
+    <span>Altman Artists</span>
+    <span>Artist Management for Opera</span>
+  </footer>
+</body>
+</html>

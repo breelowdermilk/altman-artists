@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mockup 4: Split Screen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #114a81;
+      --mint: #93dcb8;
+      --dark-blue: #0a3259;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+    }
+
+    .split-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+    }
+
+    .left-panel {
+      background: var(--blue);
+      color: var(--mint);
+      display: flex;
+      flex-direction: column;
+    }
+    .left-header {
+      padding: 32px 48px;
+      border-bottom: 1px solid rgba(147, 220, 184, 0.15);
+    }
+    .logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 24px;
+    }
+    .left-content {
+      flex: 1;
+      padding: 80px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .left-content h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 56px;
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+    .left-content h1 em { font-style: italic; }
+    .left-content p {
+      font-size: 16px;
+      line-height: 1.7;
+      opacity: 0.75;
+      max-width: 380px;
+      margin-bottom: 40px;
+    }
+    .cta-group {
+      display: flex;
+      gap: 16px;
+    }
+    .btn-primary {
+      padding: 14px 28px;
+      background: var(--mint);
+      color: var(--blue);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 4px;
+    }
+    .btn-outline {
+      padding: 14px 28px;
+      border: 1px solid var(--mint);
+      color: var(--mint);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 4px;
+    }
+    .left-footer {
+      padding: 32px 48px;
+      border-top: 1px solid rgba(147, 220, 184, 0.15);
+      font-size: 13px;
+      opacity: 0.5;
+    }
+
+    .right-panel {
+      background: var(--mint);
+      color: var(--blue);
+      display: flex;
+      flex-direction: column;
+    }
+    .right-header {
+      padding: 32px 48px;
+      border-bottom: 1px solid rgba(17, 74, 129, 0.1);
+      display: flex;
+      gap: 32px;
+    }
+    .right-header a {
+      color: var(--blue);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .right-content {
+      flex: 1;
+      padding: 48px;
+      overflow-y: auto;
+    }
+    .roster-label {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.6;
+      margin-bottom: 32px;
+    }
+
+    .artist-cards {
+      display: grid;
+      gap: 16px;
+    }
+    .artist-card-split {
+      background: white;
+      padding: 24px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .artist-card-split:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(17, 74, 129, 0.12);
+    }
+    .artist-info h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      font-weight: 400;
+      margin-bottom: 4px;
+    }
+    .artist-info span {
+      font-size: 13px;
+      opacity: 0.6;
+    }
+    .arrow-icon {
+      width: 24px;
+      height: 24px;
+      opacity: 0.4;
+    }
+    .artist-card-split:hover .arrow-icon { opacity: 1; }
+  </style>
+</head>
+<body>
+  <div class="split-container">
+    <div class="left-panel">
+      <div class="left-header">
+        <div class="logo">Altman Artists</div>
+      </div>
+      <div class="left-content">
+        <h1>Where <em>exceptional</em> voices find their stage</h1>
+        <p>We connect distinguished opera artists with the world's leading venues, building careers that resonate across generations.</p>
+        <div class="cta-group">
+          <a href="#" class="btn-primary">View Roster</a>
+          <a href="#" class="btn-outline">Contact Us</a>
+        </div>
+      </div>
+      <div class="left-footer">
+        Artist management for opera and classical voice
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <div class="right-header">
+        <a href="#">Artists</a>
+        <a href="#">About</a>
+        <a href="#">News</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="right-content">
+        <p class="roster-label">Current Roster</p>
+        <div class="artist-cards">
+          <div class="artist-card-split">
+            <div class="artist-info">
+              <h3>Nicole Chevalier</h3>
+              <span>Soprano</span>
+            </div>
+            <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+          <div class="artist-card-split">
+            <div class="artist-info">
+              <h3>Barbora Horakova</h3>
+              <span>Director</span>
+            </div>
+            <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+          <div class="artist-card-split">
+            <div class="artist-info">
+              <h3>Hailey Clark</h3>
+              <span>Soprano</span>
+            </div>
+            <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+          <div class="artist-card-split">
+            <div class="artist-info">
+              <h3>Ruby Dibble</h3>
+              <span>Mezzo-soprano</span>
+            </div>
+            <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+          <div class="artist-card-split">
+            <div class="artist-info">
+              <h3>Matthew Anchel</h3>
+              <span>Bass</span>
+            </div>
+            <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+          <div class="artist-card-split">
+            <div class="artist-info">
+              <h3>Szymon Komasa</h3>
+              <span>Baritone</span>
+            </div>
+            <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

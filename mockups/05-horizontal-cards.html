@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mockup 5: Horizontal Cards</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #114a81;
+      --mint: #93dcb8;
+      --off-white: #fafcfb;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--off-white);
+      color: var(--blue);
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 24px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(250, 252, 251, 0.9);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+    .logo {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 20px;
+      font-weight: 700;
+    }
+    nav {
+      display: flex;
+      gap: 40px;
+    }
+    nav a {
+      color: var(--blue);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .hero-cards {
+      padding: 160px 48px 80px;
+      text-align: center;
+    }
+    .hero-cards h1 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 52px;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .hero-cards h1 em {
+      font-style: italic;
+      background: linear-gradient(135deg, var(--blue), var(--mint));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-cards p {
+      font-size: 18px;
+      color: var(--blue);
+      opacity: 0.7;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .cards-section {
+      padding: 40px 0 100px;
+    }
+    .section-title {
+      padding: 0 48px;
+      margin-bottom: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .section-title h2 {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+    .section-title a {
+      font-size: 14px;
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .horizontal-scroll {
+      display: flex;
+      gap: 24px;
+      padding: 0 48px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .horizontal-scroll::-webkit-scrollbar { display: none; }
+
+    .h-card {
+      flex: 0 0 320px;
+      scroll-snap-align: start;
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(17, 74, 129, 0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .h-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(17, 74, 129, 0.15);
+    }
+    .h-card-image {
+      height: 200px;
+      background: linear-gradient(135deg, var(--blue), #1a5a94);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .h-card-image span {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 48px;
+      font-style: italic;
+      color: var(--mint);
+      opacity: 0.3;
+    }
+    .h-card-content {
+      padding: 24px;
+    }
+    .h-card-content h3 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 22px;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+    .h-card-content p {
+      font-size: 14px;
+      opacity: 0.6;
+      margin-bottom: 16px;
+    }
+    .h-card-tag {
+      display: inline-block;
+      padding: 6px 12px;
+      background: var(--mint);
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 20px;
+    }
+
+    .cta-section {
+      background: var(--blue);
+      margin: 0 48px;
+      border-radius: 24px;
+      padding: 80px;
+      text-align: center;
+      color: var(--mint);
+    }
+    .cta-section h2 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 36px;
+      font-weight: 400;
+      margin-bottom: 16px;
+    }
+    .cta-section p {
+      opacity: 0.7;
+      margin-bottom: 32px;
+    }
+    .cta-btn {
+      display: inline-block;
+      padding: 16px 32px;
+      background: var(--mint);
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 8px;
+    }
+
+    footer {
+      padding: 48px;
+      text-align: center;
+      font-size: 14px;
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Altman Artists</div>
+    <nav>
+      <a href="#">Artists</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero-cards">
+    <h1>Discover <em>extraordinary</em><br>opera artists</h1>
+    <p>We represent a select roster of distinguished performers for engagements worldwide.</p>
+  </section>
+
+  <section class="cards-section">
+    <div class="section-title">
+      <h2>Featured Artists</h2>
+      <a href="#">View All</a>
+    </div>
+    <div class="horizontal-scroll">
+      <div class="h-card">
+        <div class="h-card-image"><span>NC</span></div>
+        <div class="h-card-content">
+          <h3>Nicole Chevalier</h3>
+          <p>Acclaimed for her compelling interpretations</p>
+          <span class="h-card-tag">Soprano</span>
+        </div>
+      </div>
+      <div class="h-card">
+        <div class="h-card-image"><span>BH</span></div>
+        <div class="h-card-content">
+          <h3>Barbora Horakova</h3>
+          <p>Visionary stage direction</p>
+          <span class="h-card-tag">Director</span>
+        </div>
+      </div>
+      <div class="h-card">
+        <div class="h-card-image"><span>HC</span></div>
+        <div class="h-card-content">
+          <h3>Hailey Clark</h3>
+          <p>Rising star in the opera world</p>
+          <span class="h-card-tag">Soprano</span>
+        </div>
+      </div>
+      <div class="h-card">
+        <div class="h-card-image"><span>RD</span></div>
+        <div class="h-card-content">
+          <h3>Ruby Dibble</h3>
+          <p>Rich, expressive voice</p>
+          <span class="h-card-tag">Mezzo-soprano</span>
+        </div>
+      </div>
+      <div class="h-card">
+        <div class="h-card-image"><span>MA</span></div>
+        <div class="h-card-content">
+          <h3>Matthew Anchel</h3>
+          <p>Commanding stage presence</p>
+          <span class="h-card-tag">Bass</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Ready to book an artist?</h2>
+    <p>Get in touch with our team to discuss availability and engagements.</p>
+    <a href="#" class="cta-btn">Contact Us</a>
+  </section>
+
+  <footer>
+    <p>Altman Artists - Artist Management for Opera</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mockup 9: Artistic Flow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #114a81;
+      --mint: #93dcb8;
+      --cream: #fdfef9;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 300;
+      background: var(--cream);
+      color: var(--blue);
+      overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 28px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+    .logo {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 22px;
+      font-weight: 600;
+    }
+    nav a {
+      color: var(--blue);
+      text-decoration: none;
+      font-size: 14px;
+      margin-left: 48px;
+      font-weight: 400;
+    }
+
+    .hero-flow {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 0 48px;
+      position: relative;
+    }
+    .hero-content {
+      max-width: 600px;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-flow h1 {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 72px;
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 32px;
+    }
+    .hero-flow h1 em {
+      font-style: italic;
+      color: var(--mint);
+    }
+    .hero-flow p {
+      font-size: 18px;
+      line-height: 1.8;
+      opacity: 0.7;
+      margin-bottom: 40px;
+    }
+    .hero-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--blue);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+    .hero-link:hover span { text-decoration: underline; }
+
+    .floating-shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.15;
+    }
+    .shape-1 {
+      width: 500px;
+      height: 500px;
+      background: var(--mint);
+      top: 10%;
+      right: 10%;
+    }
+    .shape-2 {
+      width: 300px;
+      height: 300px;
+      background: var(--blue);
+      bottom: 15%;
+      right: 25%;
+    }
+
+    .flow-section {
+      padding: 120px 48px;
+      position: relative;
+    }
+    .flow-intro {
+      max-width: 500px;
+      margin-bottom: 80px;
+    }
+    .flow-intro h2 {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 48px;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+    .flow-intro p {
+      font-size: 16px;
+      line-height: 1.8;
+      opacity: 0.7;
+    }
+
+    .artists-flow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+    }
+    .artist-flow-item {
+      flex: 0 0 calc(50% - 24px);
+      padding: 48px;
+      border: 1px solid rgba(17, 74, 129, 0.1);
+      border-radius: 24px;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .artist-flow-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--mint);
+      opacity: 0;
+      transition: opacity 0.4s;
+      z-index: 0;
+    }
+    .artist-flow-item:hover::before {
+      opacity: 0.1;
+    }
+    .artist-flow-item:hover {
+      border-color: var(--mint);
+    }
+    .artist-flow-item > * {
+      position: relative;
+      z-index: 1;
+    }
+    .artist-num {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 14px;
+      opacity: 0.4;
+      margin-bottom: 16px;
+    }
+    .artist-flow-item h3 {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 36px;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+    .artist-flow-item span {
+      font-size: 14px;
+      opacity: 0.6;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .cta-flow {
+      background: var(--blue);
+      color: var(--mint);
+      margin: 0 48px 80px;
+      border-radius: 32px;
+      padding: 100px;
+      text-align: center;
+    }
+    .cta-flow h2 {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 48px;
+      font-weight: 400;
+      margin-bottom: 40px;
+    }
+    .cta-flow h2 em { font-style: italic; }
+    .cta-flow-btn {
+      display: inline-block;
+      padding: 18px 40px;
+      border: 1px solid var(--mint);
+      color: var(--mint);
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: all 0.3s;
+    }
+    .cta-flow-btn:hover {
+      background: var(--mint);
+      color: var(--blue);
+    }
+
+    footer {
+      padding: 40px 48px;
+      text-align: center;
+      font-size: 13px;
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Altman Artists</div>
+    <nav>
+      <a href="#">Artists</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero-flow">
+    <div class="hero-content">
+      <h1>The art of<br><em>representation</em></h1>
+      <p>We believe in the transformative power of opera. Our mission is to connect extraordinary artists with stages worthy of their talent.</p>
+      <a href="#" class="hero-link">
+        <span>Discover our roster</span>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+  </section>
+
+  <section class="flow-section">
+    <div class="flow-intro">
+      <h2>Our Artists</h2>
+      <p>A curated roster of distinguished performers, each bringing their unique artistry to opera houses worldwide.</p>
+    </div>
+    <div class="artists-flow">
+      <div class="artist-flow-item">
+        <div class="artist-num">01</div>
+        <h3>Nicole Chevalier</h3>
+        <span>Soprano</span>
+      </div>
+      <div class="artist-flow-item">
+        <div class="artist-num">02</div>
+        <h3>Barbora Horakova</h3>
+        <span>Director</span>
+      </div>
+      <div class="artist-flow-item">
+        <div class="artist-num">03</div>
+        <h3>Hailey Clark</h3>
+        <span>Soprano</span>
+      </div>
+      <div class="artist-flow-item">
+        <div class="artist-num">04</div>
+        <h3>Ruby Dibble</h3>
+        <span>Mezzo-soprano</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-flow">
+    <h2>Ready to <em>collaborate</em>?</h2>
+    <a href="#" class="cta-flow-btn">Get in Touch</a>
+  </section>
+
+  <footer>
+    <p>Altman Artists - Artist Management for Opera</p>
+  </footer>
+</body>
+</html>

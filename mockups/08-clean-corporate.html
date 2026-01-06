@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mockup 8: Clean Corporate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #114a81;
+      --mint: #93dcb8;
+      --gray: #f5f7f6;
+      --border: rgba(17, 74, 129, 0.12);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: white;
+      color: var(--blue);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+      background: var(--blue);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--mint);
+      font-family: 'Source Serif 4', serif;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .logo-text {
+      font-weight: 600;
+      font-size: 18px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    nav a {
+      color: var(--blue);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    .nav-cta {
+      padding: 10px 20px;
+      background: var(--blue);
+      color: white !important;
+      border-radius: 6px;
+    }
+
+    .hero-corp {
+      padding: 80px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .hero-corp h1 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 48px;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .hero-corp p {
+      font-size: 18px;
+      color: var(--blue);
+      opacity: 0.7;
+      margin-bottom: 32px;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+    }
+    .btn-primary {
+      padding: 14px 28px;
+      background: var(--blue);
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 6px;
+    }
+    .btn-secondary {
+      padding: 14px 28px;
+      border: 1px solid var(--border);
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 6px;
+    }
+    .hero-stats {
+      background: var(--gray);
+      border-radius: 16px;
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-num {
+      font-family: 'Source Serif 4', serif;
+      font-size: 48px;
+      font-weight: 600;
+      color: var(--blue);
+    }
+    .stat-label {
+      font-size: 14px;
+      opacity: 0.6;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+    .section-header h2 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 32px;
+      font-weight: 600;
+    }
+    .section-header a {
+      color: var(--blue);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .artists-grid-corp {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .artist-card-corp {
+      background: var(--gray);
+      border-radius: 12px;
+      padding: 32px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .artist-card-corp:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(17, 74, 129, 0.1);
+    }
+    .artist-avatar {
+      width: 64px;
+      height: 64px;
+      background: var(--mint);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-family: 'Source Serif 4', serif;
+      font-size: 24px;
+      color: var(--blue);
+    }
+    .artist-card-corp h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .artist-card-corp span {
+      font-size: 14px;
+      opacity: 0.6;
+    }
+
+    .cta-corp {
+      background: var(--blue);
+      border-radius: 16px;
+      padding: 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--mint);
+    }
+    .cta-corp h2 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 32px;
+      font-weight: 600;
+    }
+    .cta-corp p {
+      opacity: 0.7;
+      margin-top: 8px;
+    }
+    .cta-corp-btn {
+      padding: 16px 32px;
+      background: var(--mint);
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 6px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      margin-top: 80px;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <div class="logo">
+        <div class="logo-mark">A</div>
+        <span class="logo-text">Altman Artists</span>
+      </div>
+      <nav>
+        <a href="#">Artists</a>
+        <a href="#">About</a>
+        <a href="#">News</a>
+        <a href="#" class="nav-cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero-corp">
+      <div>
+        <h1>Artist management for opera and classical voice</h1>
+        <p>We represent a curated roster of distinguished opera artists for engagements at the world's leading stages.</p>
+        <div class="hero-btns">
+          <a href="#" class="btn-primary">View Roster</a>
+          <a href="#" class="btn-secondary">Learn More</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">9</div>
+          <div class="stat-label">Artists</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">50+</div>
+          <div class="stat-label">Opera Houses</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">15+</div>
+          <div class="stat-label">Countries</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">20+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>Featured Artists</h2>
+        <a href="#">View All Artists</a>
+      </div>
+      <div class="artists-grid-corp">
+        <div class="artist-card-corp">
+          <div class="artist-avatar">NC</div>
+          <h3>Nicole Chevalier</h3>
+          <span>Soprano</span>
+        </div>
+        <div class="artist-card-corp">
+          <div class="artist-avatar">BH</div>
+          <h3>Barbora Horakova</h3>
+          <span>Director</span>
+        </div>
+        <div class="artist-card-corp">
+          <div class="artist-avatar">HC</div>
+          <h3>Hailey Clark</h3>
+          <span>Soprano</span>
+        </div>
+        <div class="artist-card-corp">
+          <div class="artist-avatar">RD</div>
+          <h3>Ruby Dibble</h3>
+          <span>Mezzo-soprano</span>
+        </div>
+        <div class="artist-card-corp">
+          <div class="artist-avatar">MA</div>
+          <h3>Matthew Anchel</h3>
+          <span>Bass</span>
+        </div>
+        <div class="artist-card-corp">
+          <div class="artist-avatar">SK</div>
+          <h3>Szymon Komasa</h3>
+          <span>Baritone</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="cta-corp">
+      <div>
+        <h2>Ready to book an artist?</h2>
+        <p>Get in touch with our team to discuss availability.</p>
+      </div>
+      <a href="#" class="cta-corp-btn">Contact Us</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>Altman Artists</span>
+      <span>Artist Management for Opera</span>
+    </div>
+  </footer>
+</body>
+</html>

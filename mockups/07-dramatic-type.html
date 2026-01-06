@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mockup 7: Dramatic Typography</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #114a81;
+      --mint: #93dcb8;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--blue);
+      color: var(--mint);
+      min-height: 100vh;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 32px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      mix-blend-mode: difference;
+    }
+    .logo {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    nav a {
+      color: var(--mint);
+      text-decoration: none;
+      font-size: 13px;
+      margin-left: 40px;
+      letter-spacing: 1px;
+    }
+
+    .dramatic-hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 48px;
+    }
+    .giant-text {
+      font-family: 'Cormorant', serif;
+      font-size: clamp(80px, 18vw, 220px);
+      font-weight: 300;
+      line-height: 0.85;
+      letter-spacing: -8px;
+      margin-bottom: 48px;
+    }
+    .giant-text em {
+      font-style: italic;
+      opacity: 0.6;
+    }
+    .hero-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-top: 1px solid rgba(147, 220, 184, 0.2);
+      padding-top: 24px;
+    }
+    .hero-tagline {
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.6;
+    }
+    .scroll-hint {
+      font-size: 13px;
+      opacity: 0.5;
+    }
+
+    .roster-dramatic {
+      background: var(--mint);
+      color: var(--blue);
+      padding: 120px 48px;
+    }
+    .roster-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 80px;
+    }
+    .roster-header h2 {
+      font-family: 'Cormorant', serif;
+      font-size: 72px;
+      font-weight: 300;
+    }
+    .roster-header a {
+      color: var(--blue);
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--blue);
+      padding-bottom: 4px;
+    }
+
+    .artist-dramatic {
+      border-top: 1px solid rgba(17, 74, 129, 0.15);
+      padding: 40px 0;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: baseline;
+      gap: 40px;
+      cursor: pointer;
+      transition: padding 0.3s;
+    }
+    .artist-dramatic:hover {
+      padding-left: 24px;
+    }
+    .artist-dramatic h3 {
+      font-family: 'Cormorant', serif;
+      font-size: 48px;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+    .artist-dramatic:hover h3 {
+      color: var(--blue);
+    }
+    .artist-dramatic span {
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+
+    .contact-dramatic {
+      padding: 120px 48px;
+      text-align: center;
+    }
+    .contact-dramatic h2 {
+      font-family: 'Cormorant', serif;
+      font-size: 64px;
+      font-weight: 300;
+      margin-bottom: 32px;
+    }
+    .contact-dramatic h2 em { font-style: italic; }
+    .contact-btn {
+      display: inline-block;
+      padding: 20px 48px;
+      border: 1px solid var(--mint);
+      color: var(--mint);
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      transition: all 0.3s;
+    }
+    .contact-btn:hover {
+      background: var(--mint);
+      color: var(--blue);
+    }
+
+    footer {
+      padding: 32px 48px;
+      border-top: 1px solid rgba(147, 220, 184, 0.15);
+      font-size: 13px;
+      opacity: 0.5;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Altman Artists</div>
+    <nav>
+      <a href="#">Artists</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="dramatic-hero">
+    <h1 class="giant-text">Opera<br><em>Artists</em></h1>
+    <div class="hero-footer">
+      <p class="hero-tagline">Artist Management</p>
+      <p class="scroll-hint">Scroll to explore</p>
+    </div>
+  </section>
+
+  <section class="roster-dramatic">
+    <div class="roster-header">
+      <h2>The Roster</h2>
+      <a href="#">View All</a>
+    </div>
+    <div class="artist-dramatic">
+      <h3>Nicole Chevalier</h3>
+      <span>Soprano</span>
+    </div>
+    <div class="artist-dramatic">
+      <h3>Barbora Horakova</h3>
+      <span>Director</span>
+    </div>
+    <div class="artist-dramatic">
+      <h3>Hailey Clark</h3>
+      <span>Soprano</span>
+    </div>
+    <div class="artist-dramatic">
+      <h3>Ruby Dibble</h3>
+      <span>Mezzo-soprano</span>
+    </div>
+    <div class="artist-dramatic">
+      <h3>Matthew Anchel</h3>
+      <span>Bass</span>
+    </div>
+  </section>
+
+  <section class="contact-dramatic">
+    <h2>Let's <em>connect</em></h2>
+    <a href="#" class="contact-btn">Get in Touch</a>
+  </section>
+
+  <footer>
+    <p>Altman Artists</p>
+  </footer>
+</body>
+</html>

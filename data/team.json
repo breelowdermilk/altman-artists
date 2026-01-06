@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "zachary-altman",
+    "name": "Zachary Altman",
+    "title": "Founder and President",
+    "bio": "",
+    "photo": {
+      "path": "/assets/people/zachary-altman.png",
+      "alt": "Portrait of Zachary Altman",
+      "credit": "Operabase",
+      "sourceUrl": "https://data.operabase.com/profiles/447b4dbe-99c1-4eea-8557-5352b51e655d/zachary-altman-large.png"
+    }
+  },
+  {
+    "slug": "summer-hassan",
+    "name": "Summer Hassan",
+    "title": "Operations Manager",
+    "bio": "",
+    "photo": {
+      "path": "/assets/people/summer-hassan.jpg",
+      "alt": "Portrait of Summer Hassan",
+      "credit": "",
+      "sourceUrl": ""
+    }
+  }
+]

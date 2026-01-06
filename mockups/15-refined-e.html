@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Variant E: Refined Lines</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #114a81;
+      --mint: #93dcb8;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 300;
+      background: var(--blue);
+      color: var(--mint);
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 32px 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      border-bottom: 1px solid rgba(147, 220, 184, 0.08);
+    }
+    .logo {
+      font-family: 'Crimson Pro', serif;
+      font-size: 24px;
+      font-weight: 400;
+    }
+    nav {
+      display: flex;
+      gap: 40px;
+    }
+    nav a {
+      color: var(--mint);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      opacity: 0.55;
+    }
+    nav a:hover { opacity: 1; }
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding: 160px 56px 56px;
+    }
+    .hero-main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .hero h1 {
+      font-family: 'Crimson Pro', serif;
+      font-size: clamp(60px, 11vw, 110px);
+      font-weight: 300;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+    .hero h1 span {
+      display: block;
+      font-style: italic;
+      opacity: 0.65;
+    }
+    .hero-sub {
+      font-size: 14px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      opacity: 0.4;
+      margin-bottom: 56px;
+    }
+    .hero-cta {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+    .btn {
+      padding: 16px 44px;
+      border: 1px solid rgba(147, 220, 184, 0.3);
+      color: var(--mint);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: all 0.3s;
+    }
+    .btn:hover {
+      background: var(--mint);
+      color: var(--blue);
+    }
+    .link {
+      color: var(--mint);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 1px;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+    }
+    .link:hover { opacity: 1; text-decoration: underline; }
+
+    .hero-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-top: 32px;
+      border-top: 1px solid rgba(147, 220, 184, 0.1);
+    }
+    .hero-footer p {
+      font-size: 13px;
+      opacity: 0.4;
+    }
+
+    .roster {
+      padding: 80px 56px 100px;
+      border-top: 1px solid rgba(147, 220, 184, 0.1);
+    }
+    .roster-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 56px;
+    }
+    .roster-header h2 {
+      font-family: 'Crimson Pro', serif;
+      font-size: 36px;
+      font-weight: 300;
+    }
+    .roster-header span {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.4;
+    }
+    .artists-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .artist {
+      padding: 36px 24px;
+      text-align: center;
+      border: 1px solid rgba(147, 220, 184, 0.08);
+      margin: -1px 0 0 -1px;
+      transition: all 0.3s;
+      text-decoration: none;
+      color: var(--mint);
+    }
+    .artist:hover {
+      background: rgba(147, 220, 184, 0.05);
+      border-color: rgba(147, 220, 184, 0.15);
+      z-index: 1;
+    }
+    .artist h3 {
+      font-family: 'Crimson Pro', serif;
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+    .artist span {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.4;
+    }
+
+    .contact {
+      padding: 80px 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(147, 220, 184, 0.1);
+    }
+    .contact-text h2 {
+      font-family: 'Crimson Pro', serif;
+      font-size: 28px;
+      font-weight: 300;
+      margin-bottom: 8px;
+    }
+    .contact-text p {
+      font-size: 14px;
+      opacity: 0.45;
+    }
+
+    footer {
+      padding: 32px 56px;
+      border-top: 1px solid rgba(147, 220, 184, 0.08);
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      opacity: 0.35;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Altman Artists</div>
+    <nav>
+      <a href="roster.html">Artists</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-main">
+      <h1>Altman<span>Artists</span></h1>
+      <p class="hero-sub">Artist Management for Opera</p>
+      <div class="hero-cta">
+        <a href="roster.html" class="btn">View Roster</a>
+        <a href="#" class="link">Learn more</a>
+      </div>
+    </div>
+    <div class="hero-footer">
+      <p>Representing distinguished opera artists worldwide</p>
+      <p>Est. 2024</p>
+    </div>
+  </section>
+
+  <section class="roster">
+    <div class="roster-header">
+      <h2>The Roster</h2>
+      <span>9 Artists</span>
+    </div>
+    <div class="artists-grid">
+      <a href="#" class="artist">
+        <h3>Nicole Chevalier</h3>
+        <span>Soprano</span>
+      </a>
+      <a href="#" class="artist">
+        <h3>Barbora Horakova</h3>
+        <span>Director</span>
+      </a>
+      <a href="#" class="artist">
+        <h3>Hailey Clark</h3>
+        <span>Soprano</span>
+      </a>
+      <a href="#" class="artist">
+        <h3>Ruby Dibble</h3>
+        <span>Mezzo-soprano</span>
+      </a>
+      <a href="#" class="artist">
+        <h3>Matthew Anchel</h3>
+        <span>Bass</span>
+      </a>
+      <a href="#" class="artist">
+        <h3>Szymon Komasa</h3>
+        <span>Baritone</span>
+      </a>
+      <a href="#" class="artist">
+        <h3>Lindsey Reynolds</h3>
+        <span>Soprano</span>
+      </a>
+      <a href="#" class="artist">
+        <h3>Elizabeth Reiter</h3>
+        <span>Soprano</span>
+      </a>
+      <a href="#" class="artist">
+        <h3>Theo Hoffman</h3>
+        <span>Tenor</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="contact-text">
+      <h2>Inquiries</h2>
+      <p>For booking and general questions</p>
+    </div>
+    <a href="#" class="btn">Contact Us</a>
+  </section>
+
+  <footer>
+    <span>Altman Artists</span>
+    <span>Opera & Classical Voice</span>
+  </footer>
+</body>
+</html>

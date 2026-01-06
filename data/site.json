@@ -1,0 +1,27 @@
+{
+  "agencyName": "Altman Artists",
+  "tagline": "Artist management for opera and classical voice",
+  "description": "Altman Artists represents a curated roster of opera artists for engagements worldwide.",
+  "baseUrl": "https://altmanartists.com",
+  "contact": {
+    "name": "Altman Artists",
+    "email": "info@altmanartists.com",
+    "phone": "",
+    "location": ""
+  },
+  "team": [
+    {
+      "name": "Zachary Altman",
+      "title": "Founder and President"
+    },
+    {
+      "name": "Summer Hassan",
+      "title": "Operations Manager"
+    }
+  ],
+  "links": {
+    "operabase": "https://www.operabase.com/",
+    "instagram": "",
+    "linkedin": ""
+  }
+}
