@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Biographies | Altman Artists</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #fff;
+        }
+
+        header {
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 1px solid #e5e5e5;
+            margin-bottom: 3rem;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #333;
+        }
+
+        header p {
+            margin-top: 0.5rem;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        nav.toc {
+            background: #fafafa;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            border-radius: 4px;
+        }
+
+        nav.toc h2 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        nav.toc ul {
+            list-style: none;
+            columns: 2;
+            gap: 1rem;
+        }
+
+        nav.toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        nav.toc a {
+            color: #1a1a1a;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        nav.toc a:hover {
+            border-bottom-color: #1a1a1a;
+        }
+
+        nav.toc .voice-type {
+            color: #888;
+            font-size: 0.85rem;
+            margin-left: 0.25rem;
+        }
+
+        .bio {
+            margin-bottom: 4rem;
+            padding-bottom: 4rem;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .bio:last-of-type {
+            border-bottom: none;
+        }
+
+        .bio-header {
+            margin-bottom: 1rem;
+        }
+
+        .bio .headshot {
+            float: right;
+            width: 180px;
+            height: auto;
+            margin: 0 0 1rem 1.5rem;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+
+        .bio h2 {
+            font-size: 1.75rem;
+            font-weight: 400;
+            margin-bottom: 0.25rem;
+        }
+
+        .bio .voice-type {
+            font-size: 0.9rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .bio::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .bio p {
+            margin-bottom: 1rem;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .bio p:last-child {
+            margin-bottom: 0;
+        }
+
+        .bio em {
+            font-style: italic;
+        }
+
+        .approval-note {
+            background: #fffbeb;
+            border: 1px solid #fcd34d;
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .approval-note strong {
+            color: #92400e;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #e5e5e5;
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+            nav.toc ul {
+                columns: 1;
+            }
+
+            .bio h2 {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 0 1rem 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Altman Artists</h1>
+        <p>Artist Biographies</p>
+    </header>
+
+    <div class="container">
+        <div class="approval-note">
+            <strong>For Review:</strong> These biographies are pending approval before being linked from the main site. Please review each bio for accuracy and let me know of any corrections or adjustments needed.
+        </div>
+
+        <nav class="toc">
+            <h2>Artists</h2>
+            <ul>
+                <li><a href="#zachary-altman">Zachary Altman</a> <span class="voice-type">Founder</span></li>
+                <li><a href="#barbora-horakova">Barbora Horáková</a> <span class="voice-type">Director</span></li>
+                <li><a href="#nicole-chevalier">Nicole Chevalier</a> <span class="voice-type">Soprano</span></li>
+                <li><a href="#hailey-clark">Hailey Clark</a> <span class="voice-type">Soprano</span></li>
+                <li><a href="#lindsey-reynolds">Lindsey Reynolds</a> <span class="voice-type">Soprano</span></li>
+                <li><a href="#elizabeth-reiter">Elizabeth Reiter</a> <span class="voice-type">Soprano</span></li>
+                <li><a href="#ruby-dibble">Ruby Dibble</a> <span class="voice-type">Mezzo-Soprano</span></li>
+                <li><a href="#theo-hoffman">Theo Hoffman</a> <span class="voice-type">Baritone</span></li>
+                <li><a href="#szymon-komasa">Szymon Komasa</a> <span class="voice-type">Baritone</span></li>
+                <li><a href="#matthew-anchel">Matthew Anchel</a> <span class="voice-type">Bass</span></li>
+            </ul>
+        </nav>
+
+        <!-- Zachary Altman -->
+        <article class="bio" id="zachary-altman">
+            <img src="images/zachary-altman.png" alt="Zachary Altman" class="headshot">
+            <div class="bio-header">
+                <h2>Zachary Altman</h2>
+                <div class="voice-type">Founder, Altman Artists</div>
+            </div>
+            <p>Zachary Altman brings to artist management a unique perspective forged through an international performing career as a bass-baritone across Europe's most distinguished opera houses.</p>
+            <p>Prior to founding Altman Artists, Mr. Altman maintained an active international career with leading roles at Opéra National du Rhin, Teatro dell'Opera di Roma, Hamburg Staatsoper, Maggio Musicale Fiorentino, Komische Oper Berlin, Opéra de Lyon, Teatro La Fenice, Teatro Massimo di Palermo, Royal Danish Opera, Scottish Opera, Opera Vlaanderen, and Theater Basel. In the United States, he appeared with Opera Philadelphia and served as Principal Resident Artist with Opera San Jose from 2012 to 2014.</p>
+            <p>His concert engagements included performances with the Cleveland Orchestra, Czech Philharmonic, Los Angeles Philharmonic at the Hollywood Bowl, and the Boston Symphony at Carnegie Hall. These experiences across major international stages provide Mr. Altman with firsthand understanding of what artists require to build and sustain meaningful careers.</p>
+            <p>Mr. Altman's early career development included young artist positions with Fort Worth Opera and Sarasota Opera. He received recognition from the Marilyn Horne Foundation and advanced in the Metropolitan Opera National Council Auditions, experiences that inform his approach to nurturing emerging talent today.</p>
+            <p>He received his graduate degree from Manhattan School of Music, where his roles included Joe Harland in the world premiere recording of John Musto's <em>Later the Same Evening</em>, released on Albany Records.</p>
+            <p>The transition from performer to representative reflects Mr. Altman's commitment to the art form from a new vantage point. Having navigated the complexities of an international opera career, he now applies that knowledge to advocating for artists at every stage of their development.</p>
+        </article>
+
+        <!-- Barbora Horáková -->
+        <article class="bio" id="barbora-horakova">
+            <img src="images/barbora-horakova.jpg" alt="Barbora Horáková" class="headshot">
+            <div class="bio-header">
+                <h2>Barbora Horáková</h2>
+                <div class="voice-type">Director</div>
+            </div>
+            <p>Honored as Newcomer of the Year at the 2018 International Opera Awards in London, Czech director Barbora Horáková has rapidly emerged as one of the most compelling voices in contemporary opera directing, with productions at the Vienna State Opera, Staatsoper Berlin, Semperoper Dresden, Dutch National Opera, English National Opera, and Theater an der Wien.</p>
+            <p>Since the 2019/20 season, Ms. Horáková has served as House Director at Hanover State Opera. Her upcoming engagements include <em>Madama Butterfly</em> at Grand Théâtre de Genève and <em>Die Zauberflöte</em> at the Wiener Staatsoper. Recent productions include <em>Le nozze di Figaro</em> and Reimann's <em>Lear</em> at the National Theatre Prague, and <em>Peter Grimes</em> at Dutch National Opera.</p>
+            <p>Ms. Horáková's directorial work spans an impressive range of repertoire. Notable productions include Verdi's <em>Luisa Miller</em> at ENO and Wuppertal, Debussy's <em>Pelléas et Mélisande</em> in Oslo and Basel, Monteverdi's <em>L'Orfeo</em> and Purcell's <em>Dido and Aeneas</em> in Bilbao, Respighi's <em>La bella dormente nel bosco</em> in Lyon, and the double bill of Ravel's <em>L'enfant et les sortilèges</em> and Offenbach's <em>Olympia</em> at Theater an der Wien. Her 2021 Prague <em>Rigoletto</em> was praised for its cutting-edge approach to Verdi's masterwork.</p>
+            <p>Her work has been recognized with the Ring Award in Graz (2017) for her staging concept of Donizetti's <em>Don Pasquale</em> and the Spanish theatre prize "Los Premios Ercilla" (2019) for best performance. Since 2015, she has collaborated extensively with director Calixto Bieito, adapting his productions of <em>From a House of the Dead</em>, <em>Tannhäuser</em>, Britten's <em>War Requiem</em>, and Zimmermann's <em>Die Soldaten</em> throughout Europe.</p>
+            <p>Born in Prague, Ms. Horáková began her artistic journey as a singer, studying at the conservatoires in Basel and Geneva. As a member of the Swiss International Studio, she received several competition prizes before turning to opera directing at the Bayerische Theaterakademie.</p>
+        </article>
+
+        <!-- Nicole Chevalier -->
+        <article class="bio" id="nicole-chevalier">
+            <img src="images/nicole-chevalier.jpg" alt="Nicole Chevalier" class="headshot">
+            <div class="bio-header">
+                <h2>Nicole Chevalier</h2>
+                <div class="voice-type">Soprano</div>
+            </div>
+            <p>American dramatic coloratura soprano Nicole Chevalier made her international breakthrough at the 2019 Salzburg Festival as Elettra in Mozart's <em>Idomeneo</em> under Teodor Currentzis and Peter Sellars, a performance that established her among the leading singing actresses of her generation.</p>
+            <p>In the 2023-24 season, Ms. Chevalier made her Wiener Staatsoper debut in the title role of Aribert Reimann's <em>Medea</em>, following house debuts at Teatro Real Madrid as Eva in Laurent Pelly's new production of <em>Die Meistersinger</em> and the title role of Thea Musgrave's <em>Mary, Queen of Scots</em> at Oper Leipzig. She has since undertaken the title role in <em>Rusalka</em> at Deutsche Oper am Rhein, with upcoming debuts in <em>Norma</em> and <em>Salome</em>.</p>
+            <p>Her international profile includes debuts at Royal Opera House, Covent Garden as Vitellia in <em>La clemenza di Tito</em> and Donna Elvira in <em>Don Giovanni</em>; Staatsoper Berlin for <em>Don Giovanni</em>; and Festival d'Aix-en-Provence, where she returned as Elettra (2022) and Despina (2023). At ENO, she performed a staged one-woman show of Górecki's <em>Symphony of Sorrowful Songs</em> and most recently appeared as Violetta in Peter Konwitschny's <em>La traviata</em>.</p>
+            <p>For her performances as all four female leads in Offenbach's <em>Les Contes d'Hoffmann</em> at Komische Oper Berlin, Ms. Chevalier received the German Theatre Prize "Der Faust" (2016). In 2017, she was nominated as "Singer of the Year" by <em>Opernwelt</em> for her portrayal of Reimann's <em>Medea</em>.</p>
+            <p>From 2003 to 2007, she was a member of Theater Freiburg, and from 2012 to 2017, a member of Komische Oper Berlin. Born in Chicago, Ms. Chevalier studied at Northwestern University and Indiana University Bloomington with Virginia Zeani, continuing at the Juilliard School with Trish McCaffrey. She took master classes with Martina Arroyo, Joan Dornemann, Renata Scotto, and Giorgio Tozzi.</p>
+        </article>
+
+        <!-- Hailey Clark -->
+        <article class="bio" id="hailey-clark">
+            <img src="images/hailey-clark.jpg" alt="Hailey Clark" class="headshot">
+            <div class="bio-header">
+                <h2>Hailey Clark</h2>
+                <div class="voice-type">Soprano</div>
+            </div>
+            <p>Winner of the Österreichischer Musiktheaterpreis (Austrian Music Theater Prize) for Best Female Leading Role for her performance as Alma Beers in <em>Brokeback Mountain</em> at Salzburger Landestheater, American soprano Hailey Clark commands an international career spanning the world's most prestigious stages.</p>
+            <p>Ms. Clark has made notable debuts at Wagner's Bayreuth Festival as Freia in <em>Das Rheingold</em> and at the Royal Concertgebouw in Amsterdam as the Queen of Hearts in the Dutch premiere of Unsuk Chin's <em>Alice in Wonderland</em> with the Netherlands Radio Philharmonic Orchestra. <em>Opernwelt</em> called her "stunning" in Lydia Steier's new production of Halévy's <em>La Juive</em>, in which she subsequently sang the title role of <em>Alcina</em>. Other recent engagements include Gerhilde in <em>Die Walküre</em> with the Dresden Philharmonic, Nedda in <em>Pagliacci</em> with Austin Opera, Rosalinde in <em>Die Fledermaus</em> with Central City Opera, and Fiordiligi in <em>Così fan tutte</em> with Palm Beach Opera.</p>
+            <p>A two-time regional finalist in the Metropolitan Opera National Council Auditions, Ms. Clark was also a finalist in the 2015 Competizione dell'Opera in Linz and received the Santa Fe Opera's Award for Outstanding Apprentice. Her repertoire spans Mozart heroines to Germanic repertoire and French Grand Opera, including Donna Anna and Donna Elvira in <em>Don Giovanni</em>, Erste Dame in <em>Die Zauberflöte</em>, Micaëla in <em>Carmen</em>, and Anne Trulove in <em>The Rake's Progress</em>.</p>
+            <p>In fall 2024, Ms. Clark joined Vanderbilt University's Blair School of Music as Assistant Professor of Voice. She holds a Master of Music from the University of Michigan School of Music and a Bachelor of Music from the University of Maryland School of Music.</p>
+            <p>Beyond classical music, Ms. Clark is an active singer-songwriter, releasing the single "Unraveled" (2023) and her folk EP <em>Sad Girl Songs</em> (2024).</p>
+        </article>
+
+        <!-- Lindsey Reynolds -->
+        <article class="bio" id="lindsey-reynolds">
+            <img src="images/lindsey-reynolds.png" alt="Lindsey Reynolds" class="headshot">
+            <div class="bio-header">
+                <h2>Lindsey Reynolds</h2>
+                <div class="voice-type">Soprano</div>
+            </div>
+            <p>Praised by <em>Parterre Box</em> for wielding her "sparkling high soprano with precision and dazzle," American soprano Lindsey Reynolds has established herself as a versatile artist equally at home in bel canto, contemporary opera, and world premieres.</p>
+            <p>In the 2025-26 season, Ms. Reynolds returns to Opera Philadelphia as Contessa di Folleville in Rossini's <em>Il viaggio a Reims</em> in Damiano Michieletto's American debut production, and creates the role of Ashley Devon in the U.S. premiere of Missy Mazzoli's <em>The Listeners</em>. She will also make her New Orleans Opera debut as Adina in <em>L'elisir d'amore</em> and star in the world premiere of <em>She Who Dared</em> at Chicago Opera Theater, singing Mary Louise Smith.</p>
+            <p>From 2022 to 2024, Ms. Reynolds was a member of the Ryan Opera Center Ensemble at Lyric Opera of Chicago, where she performed Barena in <em>Jenůfa</em> and the Celestial Voice in <em>Don Carlos</em>, and appeared in <em>Le Comte Ory</em> and the world premiere of <em>Proximity</em>. In summer 2024, she captivated international audiences with recitals at the Aldeburgh Festival of Music and the Arts and a concert celebrating the WWII Liberation of Nice.</p>
+            <p>Ms. Reynolds is the first-place winner of the James Toland Vocal Arts Competition and the Camille Coloratura Awards. She has also received the Young Patronesses of the Opera/Florida Grand Opera Competition, the Hal Leonard Art Song Competition, the National Association of Negro Musicians Competition, the Musicians Club of Women Competition, an Emerging Artist Award from Opera Index, and the Jack Kent Cooke Young Artist Award from <em>From the Top</em>.</p>
+            <p>A native of New Orleans, Ms. Reynolds holds both Bachelor and Master of Music degrees from the Curtis Institute of Music, where she studied with Julia Falkner.</p>
+        </article>
+
+        <!-- Elizabeth Reiter -->
+        <article class="bio" id="elizabeth-reiter">
+            <img src="images/elizabeth-reiter.png" alt="Elizabeth Reiter" class="headshot">
+            <div class="bio-header">
+                <h2>Elizabeth Reiter</h2>
+                <div class="voice-type">Soprano</div>
+            </div>
+            <p>Acclaimed for her "rich and silvery" voice (<em>The Boston Globe</em>) and "impressive musical polish" (<em>Opera News</em>), American soprano Elizabeth Reiter has been a member of the Oper Frankfurt ensemble for nearly a decade, establishing herself as a leading interpreter of both classical and contemporary operatic repertoire.</p>
+            <p>In the 2025-26 season, Ms. Reiter sings Despina in a new production of <em>Così fan tutte</em> and Agnés in George Benjamin's <em>Written on Skin</em>, both at Oper Frankfurt. Recent seasons have seen her debut as Tatiana in <em>Eugene Onegin</em> and the title role in Orff's <em>Die Kluge</em>, alongside acclaimed performances as Asteria in Handel's <em>Tamerlano</em>.</p>
+            <p>Following two years in the Opern Studio, Ms. Reiter joined the Frankfurt ensemble in 2013/14, where her roles have included Armida in Handel's <em>Rinaldo</em>, Susanna in <em>Le nozze di Figaro</em>, Pamina in <em>Die Zauberflöte</em>, Gretel in <em>Hänsel und Gretel</em>, Valencienne in Lehár's <em>Die lustige Witwe</em>, Anne Trulove in <em>The Rake's Progress</em>, and the title role in Janáček's <em>The Cunning Little Vixen</em>. She created the dual role of Renee/Alice in the German premiere of Olga Neuwirth's <em>Lost Highway</em>.</p>
+            <p>Ms. Reiter made her professional debut at age sixteen as Young Maria Celeste in the world premiere of Philip Glass's <em>Galileo Galilei</em>, presented at Chicago's Goodman Theatre, Brooklyn Academy of Music, and London's Barbican Centre. A Chicago native, she sang as a child in over 100 performances at Lyric Opera, including <em>La Bohème</em>, <em>Tosca</em>, <em>Carmen</em>, <em>Otello</em>, and <em>Hänsel und Gretel</em>.</p>
+            <p>She holds a graduate degree from the Curtis Institute of Music and an undergraduate degree from Manhattan School of Music. Additional training includes the Steans Institute at Ravinia, Tanglewood Music Center, Aspen Music Festival, Chautauqua Institution, and the Gerdine Young Artist Program at Opera Theatre of Saint Louis.</p>
+        </article>
+
+        <!-- Ruby Dibble -->
+        <article class="bio" id="ruby-dibble">
+            <img src="images/ruby-dibble.png" alt="Ruby Dibble" class="headshot">
+            <div class="bio-header">
+                <h2>Ruby Dibble</h2>
+                <div class="voice-type">Mezzo-Soprano</div>
+            </div>
+            <p>Described by <em>Opera Today</em> as possessing a "dark-hued, plummy and rich" voice, American mezzo-soprano Ruby Dibble was a 2024 Metropolitan Opera Laffont Competition national finalist and first-place winner of the 2024 Annapolis Opera Vocal Competition.</p>
+            <p>Ms. Dibble makes her European debut at Oper Frankfurt in the 2025-26 season as Un Musico in <em>Manon Lescaut</em>, followed by role debuts as Mercédès in <em>Carmen</em> and Isaura in <em>Tancredi</em>. She has appeared professionally as Flora in <em>La Traviata</em> with Wolf Trap Opera and Berta in <em>Il Barbiere di Siviglia</em> with Lyric Opera of Kansas City, and covered Cherubino in <em>Le nozze di Figaro</em> at Santa Fe Opera.</p>
+            <p><em>OperaWire</em> noted that Ms. Dibble "commands the stage with her powerful voice, agile movements, and captivating presence." Her concert work includes multiple appearances at Philadelphia's Kimmel Center under Yannick Nézet-Séguin and Carnegie Hall engagements, including a solo CityWide recital. Roles performed include Le Prince Charmant in <em>Cendrillon</em>, Dorabella in <em>Così fan tutte</em>, Elle in Poulenc's <em>La Voix Humaine</em>, Carmen in <em>Bel Canto</em>, Sesto in <em>La clemenza di Tito</em>, and Blanche de la Force in <em>Dialogues des Carmélites</em>.</p>
+            <p>Additional competition recognition includes finalist status at the 2024 Marcella Sembrich International Voice Competition, second place at the 2023 Cooper-Bing Competition, and semifinalist placement in the 2022 and 2023 Lotte Lenya Competition.</p>
+            <p>Ms. Dibble is a graduate of the Juilliard School (Artist Diploma in Opera Studies), Curtis Institute of Music, and Oberlin Conservatory. Her young artist program experience includes Santa Fe Opera, Wolf Trap Opera, Glimmerglass Festival, and Aspen Music Festival & School. A native of Kansas City, Missouri, she was the Margaret Aull Wynne and Milly E. Wynne Fellow at Curtis.</p>
+        </article>
+
+        <!-- Theo Hoffman -->
+        <article class="bio" id="theo-hoffman">
+            <img src="images/theo-hoffman.png" alt="Theo Hoffman" class="headshot">
+            <div class="bio-header">
+                <h2>Theo Hoffman</h2>
+                <div class="voice-type">Baritone</div>
+            </div>
+            <p>A 2016 Grand Finalist in the Metropolitan Opera National Council Auditions and recipient of the 2018 Sara Tucker Study Grant from the Richard Tucker Music Foundation, American baritone Theo Hoffman brings exceptional artistry to repertoire spanning Mozart and Rossini to contemporary works by Philip Glass, Jake Heggie, and Jonathan Dove.</p>
+            <p>Mr. Hoffman's 2024-25 season includes his first Metropolitan Opera engagement, covering the Sensor in the season-opening production of <em>Grounded</em>. In 2025-26, he sings Oreste at Paris's Opéra Comique in a new production of Gluck's <em>Iphigénie en Tauride</em> conducted by Louis Langrée. Recent engagements include his debut with Opernhaus Zürich as Momus in <em>Platée</em> and his return to Staatsoper Hamburg for Lescaut in Massenet's <em>Manon</em>.</p>
+            <p>In 2017, Mr. Hoffman performed Josef K. in the critically acclaimed American premiere of Philip Glass's <em>The Trial</em> at Opera Theatre of Saint Louis. His signature roles include Count Almaviva in <em>Le nozze di Figaro</em> (Opera Theatre of Saint Louis, Israeli Opera, New Orleans Opera), Papageno in <em>Die Zauberflöte</em> (Saint Louis, Los Angeles Opera, Israeli Opera), and Schaunard in <em>La Bohème</em> (Atlanta Opera, Seattle Opera, Sacramento Opera).</p>
+            <p>The Manhattan-born baritone trained at LA Opera as a Domingo-Colburn-Stein Young Artist and received a 2017 career grant from the Sullivan Foundation. He completed his Pre-College, Bachelor of Music, and Master of Music degrees in voice at the Juilliard School.</p>
+            <p>Beyond opera, Mr. Hoffman released his debut album <em>Schubert Beatles</em> on January 31, 2025, on the NYFOS label, reflecting his commitment to expanding the boundaries of art song performance.</p>
+        </article>
+
+        <!-- Szymon Komasa -->
+        <article class="bio" id="szymon-komasa">
+            <img src="images/szymon-komasa.jpg" alt="Szymon Komasa" class="headshot">
+            <div class="bio-header">
+                <h2>Szymon Komasa</h2>
+                <div class="voice-type">Baritone</div>
+            </div>
+            <p>A BBC Cardiff Singer of the World finalist and first-prize winner of the prestigious Giacomo Puccini Competition, Polish baritone Szymon Komasa has established an international career at the world's leading opera houses and concert halls.</p>
+            <p>Mr. Komasa made his Arena di Verona debut as Schaunard in <em>La Bohème</em> in 2009 and has since appeared at the Semperoper Dresden (Schaunard, Albert in <em>La Juive</em>), Teatro Massimo di Palermo (Demetrius in <em>A Midsummer Night's Dream</em>), and the Polish National Opera in Warsaw. His acclaimed interpretation of the title role in Szymanowski's <em>King Roger</em> has been heard in both Warsaw and at the Semperoper Dresden.</p>
+            <p>In recital, Mr. Komasa has performed at Carnegie Hall (2012) and Wigmore Hall (2012), demonstrating his equal command of the song repertoire. His operatic roles include Papageno in <em>Die Zauberflöte</em>, Figaro in <em>Le nozze di Figaro</em>, and Pandolfe in Massenet's <em>Cendrillon</em>, alongside works by Bellini, Donizetti, and Verdi. He is equally committed to contemporary repertoire, having successfully performed works by living composers.</p>
+            <p>His competition successes include the Giacomo Puccini Competition (First Prize, Italy), Marcella Sembrich Competition (First Prize), Gerda Lissner Competition (Second Prize), and Giulio Gari Competition (Grand Prize, USA).</p>
+            <p>Born in Poznań, Poland, Mr. Komasa began his musical studies on the cello at age seven before turning to voice. He is a graduate of the Karol Szymanowski State Music High School in Warsaw, the Juilliard School in New York, and the Guildhall School of Music and Drama in London.</p>
+            <p>In a historic first, Mr. Komasa became the first opera singer to appear on the cover of <em>L'Officiel Hommes</em> Poland, bringing classical music to new audiences.</p>
+        </article>
+
+        <!-- Matthew Anchel -->
+        <article class="bio" id="matthew-anchel">
+            <img src="images/matthew-anchel.jpg" alt="Matthew Anchel" class="headshot" style="object-fit: cover; object-position: top;">
+            <div class="bio-header">
+                <h2>Matthew Anchel</h2>
+                <div class="voice-type">Bass</div>
+            </div>
+            <p>Hailed by the <em>Wall Street Journal</em> as "a voice to watch" and praised by the <em>New York Times</em> for his "magnetic, deep voice that projected power and authority," American bass Matthew Anchel has sung four seasons on the roster of the Metropolitan Opera while maintaining engagements across Europe and North America.</p>
+            <p>Mr. Anchel opened the Metropolitan Opera's 2024-25 season as part of the Kill Chain in <em>Grounded</em>. His Met credits include Master of Ceremonies in <em>Cinderella</em>, the Jailer in <em>Tosca</em>, and covering Un moine in <em>Don Carlos</em>, following appearances in <em>The Exterminating Angel</em>, <em>Die Meistersinger von Nürnberg</em>, and <em>Fedora</em>.</p>
+            <p>International engagements include two seasons with the Oper Stuttgart ensemble (2018-2020), where he performed Bartolo, Benoit, and Crespel/Luther across multiple productions. At Glyndebourne Festival, he covered Sarastro in <em>Die Zauberflöte</em>, and at Santa Fe Opera, he covered Tsar Dodon in <em>The Golden Cockerel</em>. He was an ensemble member at Oper Leipzig (2011-2012) and a young artist at Los Angeles Opera's Domingo-Thornton Program.</p>
+            <p>A 2013 Grand Finalist in the Metropolitan Opera National Council Auditions, Mr. Anchel has received the George London Foundation Encouragement Award, third place at the Palm Beach Opera Competition, the Judges Award at the Opera Index Competition, and was a finalist in the Loren L. Zachary Competition. In concert, he has appeared as bass soloist in Mahler's Eighth Symphony at Carnegie Hall.</p>
+            <p>Born into an opera family—his parents are singers Julia Heyer and David Anchel—Mr. Anchel first sang in the Metropolitan Opera Children's Chorus at age six. He holds a Bachelor of Music in Vocal Performance from Manhattan School of Music.</p>
+            <p>Mr. Anchel maintains an active voice studio and has built a following of over 800,000 on TikTok, bringing classical music to new audiences.</p>
+        </article>
+    </div>
+
+    <footer>
+        <p>Altman Artists &middot; zach@altmanartists.com</p>
+    </footer>
+</body>
+</html>

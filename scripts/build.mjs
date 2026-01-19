@@ -495,6 +495,13 @@ export async function buildSite() {
     // It's okay if admin doesn't exist yet
   }
 
+  // Copy bios page if it exists
+  try {
+    await copyDir(path.join(srcDir, "artists", "bios"), path.join(distDir, "artists", "bios"));
+  } catch (e) {
+    // It's okay if bios doesn't exist yet
+  }
+
   await fs.writeFile(path.join(distDir, "index.html"), await renderHome({ site, artists }), "utf8");
   await fs.mkdir(path.join(distDir, "artists"), { recursive: true });
   await fs.writeFile(path.join(distDir, "artists", "index.html"), await renderArtistsIndex({ site, artists }), "utf8");
