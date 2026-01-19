@@ -51,8 +51,17 @@ All pages use a single `renderLayout()` function that handles:
 - `/` - Home page (featured artists grid)
 - `/artists/` - Full roster with search/filter
 - `/artists/<slug>/` - Individual artist page
+- `/artists/bios/` - Full biographies page (static HTML)
 - `/contact/` - Contact/team page
 - `/about/` - About page (currently unused)
+
+### Static Pages
+
+Static HTML pages can be added to `src/` and will be copied to `dist/` during build:
+- `src/artists/bios/` → `dist/artists/bios/` (artist biographies with headshots)
+- `src/admin/` → `dist/admin/` (admin interface if exists)
+
+To add a new static page, create the folder in `src/` with an `index.html` and add a copy block in `scripts/build.mjs` following the existing pattern.
 
 ### Base Path Handling
 
@@ -115,16 +124,17 @@ Optional fields:
 
 ## Deployment
 
-### GitHub Pages (Automated)
-- Workflow at `.github/workflows/deploy-pages.yml`
-- Triggers on push to `main` or manual workflow dispatch
-- Sets `BASE_PATH` and `BASE_URL` automatically for repo Pages
-- Deploys `dist/` folder
+### Netlify (Production)
+- **Deploy command:** `netlify deploy --prod --dir=dist`
+- Site is hosted at https://altmanartists.com
+- Netlify project: `altman-artists`
+- Admin: https://app.netlify.com/projects/altman-artists
 
-### Manual Static Hosting
+**Important:** The GitHub Pages workflow exists but Netlify is the actual production host. Always use `netlify deploy --prod` for production deployments.
+
+### Build for Deployment
 - Build command: `node scripts/build.mjs`
 - Output directory: `dist/`
-- Works on Netlify, Vercel, S3, any static host
 
 ## Important Constraints
 
