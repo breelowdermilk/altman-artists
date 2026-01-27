@@ -136,6 +136,47 @@ Optional fields:
 - Build command: `node scripts/build.mjs`
 - Output directory: `dist/`
 
+## Git Workflow
+
+**Always use feature branches and PRs for changes:**
+
+1. **Create a feature branch** from main:
+   ```bash
+   git checkout -b <descriptive-branch-name>
+   ```
+   Use kebab-case names like `add-artist-name` or `fix-search-bug`
+
+2. **Make changes and build** to verify:
+   ```bash
+   node scripts/build.mjs
+   node scripts/dev.mjs  # Preview locally
+   ```
+
+3. **Commit source files only** (not `dist/`):
+   ```bash
+   git add data/artists.json src/assets/people/new-file.png
+   git commit -m "Add Artist Name to roster"
+   ```
+
+4. **Push and create PR:**
+   ```bash
+   git push -u origin <branch-name>
+   gh pr create --title "Add Artist Name" --body "Summary of changes"
+   ```
+
+5. **Merge after review:**
+   ```bash
+   gh pr merge --squash --delete-branch
+   git checkout main && git pull
+   ```
+
+**Key practices:**
+- Never commit directly to main
+- Only commit source files (`data/`, `src/`), not build artifacts (`dist/`)
+- Preview changes locally before pushing
+- Use descriptive commit messages
+- Delete feature branches after merging
+
 ## Important Constraints
 
 - **No npm install needed** - uses only Node.js built-in modules
