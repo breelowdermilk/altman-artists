@@ -92,6 +92,21 @@
     "website": "https://www.rubydibble.com/"
   },
   {
+    "slug": "theresa-kronthaler",
+    "name": "Theresa Kronthaler",
+    "voiceType": "Mezzo-soprano",
+    "location": "",
+    "repertoireHighlights": [],
+    "bio": "",
+    "photo": {
+      "path": "/assets/people/theresa-kronthaler.png",
+      "alt": "Portrait of Theresa Kronthaler",
+      "credit": "",
+      "sourceUrl": ""
+    },
+    "website": "https://www.theresakronthaler.com/en/home-en"
+  },
+  {
     "slug": "theo-hoffman",
     "name": "Theo Hoffman",
     "voiceType": "Baritone",
