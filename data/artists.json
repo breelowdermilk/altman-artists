@@ -16,6 +16,21 @@
     "website": ""
   },
   {
+    "slug": "marcus-shields",
+    "name": "Marcus Shields",
+    "voiceType": "Director",
+    "location": "",
+    "repertoireHighlights": [],
+    "bio": "",
+    "photo": {
+      "path": "/assets/people/marcus-shields.jpg",
+      "alt": "Portrait of Marcus Shields",
+      "credit": "",
+      "sourceUrl": ""
+    },
+    "website": "https://www.marcusshields.com/"
+  },
+  {
     "slug": "nicole-chevalier",
     "name": "Nicole Chevalier",
     "voiceType": "Soprano",
