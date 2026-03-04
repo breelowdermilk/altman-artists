@@ -46,6 +46,21 @@
     "website": ""
   },
   {
+    "slug": "natasha-te-rupe-wilson",
+    "name": "Natasha Te Rupe Wilson",
+    "voiceType": "Soprano",
+    "location": "",
+    "repertoireHighlights": [],
+    "bio": "",
+    "photo": {
+      "path": "/assets/people/natasha-te-rupe-wilson.jpg",
+      "alt": "Portrait of Natasha Te Rupe Wilson",
+      "credit": "",
+      "sourceUrl": ""
+    },
+    "website": ""
+  },
+  {
     "slug": "hailey-clark",
     "name": "Hailey Clark",
     "voiceType": "Soprano",
@@ -68,10 +83,10 @@
     "repertoireHighlights": [],
     "bio": "",
     "photo": {
-      "path": "/assets/people/lindsey-reynolds.png",
+      "path": "/assets/people/lindsey-reynolds.jpg",
       "alt": "Portrait of Lindsey Reynolds",
-      "credit": "Operabase",
-      "sourceUrl": "https://data.operabase.com/profiles/8954d9b4-18d1-4c9f-a81b-37841b402745/lindsey-reynolds-large.png"
+      "credit": "",
+      "sourceUrl": ""
     },
     "website": "https://www.lindseyreynolds-soprano.com/"
   },
