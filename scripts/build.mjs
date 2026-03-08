@@ -219,6 +219,7 @@ function renderLayout({ site, title, description, canonicalPath, content }) {
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="${escapeHtml(withBase(site, "/assets/styles.css"))}" />
     <script defer src="${escapeHtml(withBase(site, "/assets/site.js"))}"></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -246,6 +247,17 @@ function renderLayout({ site, title, description, canonicalPath, content }) {
         </div>
       </div>
     </footer>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", function(user) {
+          if (!user) {
+            window.netlifyIdentity.on("login", function() {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>`;
 }
