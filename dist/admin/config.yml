@@ -2,41 +2,131 @@ backend:
   name: git-gateway
   branch: main
 
-# These lines allow you to work locally if you run `npx decap-server`
+# When running locally with `npx decap-server`, the CMS uses a local proxy
+# instead of git-gateway. Remove or set to false for production-only use.
 local_backend: true
 
 media_folder: "src/assets/people"
 public_folder: "/assets/people"
 
+# Slug settings for new artists
+slug:
+  encoding: "ascii"
+  clean_accents: true
+
 collections:
   - name: "config"
-    label: "Configuration"
+    label: "Site Data"
     files:
       - name: "artists"
         label: "Artist Roster"
         file: "data/artists.json"
-        description: "Manage the list of artists on the roster"
+        description: "Add, remove, and edit artists on the roster."
         fields:
           - label: "Artists"
             name: "artists"
             widget: "list"
-            summary: "{{name}} ({{slug}})"
+            summary: "{{fields.name}} — {{fields.voiceType}}"
+            label_singular: "Artist"
+            add_to_top: true
+            minimize_collapsed: true
             fields:
-              - {label: "Name", name: "name", widget: "string"}
-              - {label: "Slug (URL-friendly ID)", name: "slug", widget: "string", pattern: ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "Must be kebab-case (e.g. john-doe)"]}
-              - {label: "Discipline / Voice Type", name: "voiceType", widget: "string", required: false}
-              - {label: "Location", name: "location", widget: "string", required: false}
-              - {label: "Bio", name: "bio", widget: "text", required: false}
-              - {label: "Management Notes", name: "managementNotes", widget: "string", required: false, hint: "Internal or specific booking notes."}
+              - label: "Name"
+                name: "name"
+                widget: "string"
+                hint: "Full display name (e.g. Nicole Chevalier)"
+
+              - label: "Slug"
+                name: "slug"
+                widget: "string"
+                pattern:
+                  - "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                  - "Must be lowercase kebab-case (e.g. nicole-chevalier)"
+                hint: "URL-friendly ID. Use lowercase letters, numbers, and hyphens only."
+
+              - label: "Voice Type / Discipline"
+                name: "voiceType"
+                widget: "select"
+                options:
+                  - "Soprano"
+                  - "Mezzo-soprano"
+                  - "Countertenor"
+                  - "Tenor"
+                  - "Baritone"
+                  - "Bass"
+                  - "Bass-baritone"
+                  - "Director"
+                  - "Conductor"
+                  - "Pianist"
+                  - "Composer"
+                required: false
+                hint: "Select the artist's primary voice type or discipline."
+
+              - label: "Location"
+                name: "location"
+                widget: "string"
+                required: false
+                hint: "City or region (e.g. New York, Berlin)"
+
+              - label: "Bio"
+                name: "bio"
+                widget: "text"
+                required: false
+                hint: "Short biography paragraph."
+
+              - label: "Management Notes"
+                name: "managementNotes"
+                widget: "string"
+                required: false
+                hint: "Internal notes shown on roster cards (e.g. co-management details)."
+
               - label: "Photo"
                 name: "photo"
                 widget: "object"
+                collapsed: true
                 required: false
                 fields:
-                  - {label: "Image", name: "path", widget: "image"}
-                  - {label: "Alt Text", name: "alt", widget: "string", required: false}
-                  - {label: "Credit", name: "credit", widget: "string", required: false}
-                  - {label: "Source URL", name: "sourceUrl", widget: "string", required: false}
-              - {label: "Operabase URL", name: "operabaseUrl", widget: "string", required: false}
-              - {label: "Website", name: "website", widget: "string", required: false}
-              - {label: "Repertoire Highlights", name: "repertoireHighlights", widget: "list", required: false}
+                  - label: "Image"
+                    name: "path"
+                    widget: "image"
+                    required: false
+                    hint: "Upload a headshot. Recommended size: 1200×1500px (4:5 ratio)."
+                    media_folder: "/src/assets/people"
+                    public_folder: "/assets/people"
+
+                  - label: "Alt Text"
+                    name: "alt"
+                    widget: "string"
+                    required: false
+                    hint: "Describe the photo for accessibility (e.g. Portrait of Nicole Chevalier)."
+
+                  - label: "Photo Credit"
+                    name: "credit"
+                    widget: "string"
+                    required: false
+                    hint: "Photographer name."
+
+                  - label: "Source URL"
+                    name: "sourceUrl"
+                    widget: "string"
+                    required: false
+                    hint: "Original image URL if downloaded from the web."
+
+              - label: "Operabase URL"
+                name: "operabaseUrl"
+                widget: "string"
+                required: false
+                hint: "Direct link to the artist's Operabase profile."
+
+              - label: "Website"
+                name: "website"
+                widget: "string"
+                required: false
+                hint: "Artist's personal website URL."
+
+              - label: "Repertoire Highlights"
+                name: "repertoireHighlights"
+                widget: "list"
+                required: false
+                label_singular: "Role"
+                hint: "Notable roles (e.g. Donna Anna — Don Giovanni)."
