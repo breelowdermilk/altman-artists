@@ -21,6 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/styles.css" />
     <script defer src="/assets/site.js"></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -43,8 +44,8 @@
   
   <div class="profile">
     <figure class="portrait">
-      <img src="/assets/people/lindsey-reynolds.png" alt="Portrait of Lindsey Reynolds" loading="eager" />
-      <figcaption class="caption">Operabase · <a href="https://data.operabase.com/profiles/8954d9b4-18d1-4c9f-a81b-37841b402745/lindsey-reynolds-large.png" target="_blank" rel="noopener noreferrer">Source</a></figcaption>
+      <img src="/assets/people/lindsey-reynolds.jpg" alt="Portrait of Lindsey Reynolds" loading="eager" />
+      
     </figure>
     <div>
       <article class="panel">
@@ -72,5 +73,16 @@
         </div>
       </div>
     </footer>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", function(user) {
+          if (!user) {
+            window.netlifyIdentity.on("login", function() {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>

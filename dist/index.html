@@ -21,6 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/styles.css" />
     <script defer src="/assets/site.js"></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -51,8 +52,16 @@
   <h3>Barbora Horáková</h3>
   <span>Director</span>
 </a>
+<a href="/artists/marcus-shields/" class="artist">
+  <h3>Marcus Shields</h3>
+  <span>Director</span>
+</a>
 <a href="/artists/nicole-chevalier/" class="artist">
   <h3>Nicole Chevalier</h3>
+  <span>Soprano</span>
+</a>
+<a href="/artists/natasha-te-rupe-wilson/" class="artist">
+  <h3>Natasha Te Rupe Wilson</h3>
   <span>Soprano</span>
 </a>
 <a href="/artists/hailey-clark/" class="artist">
@@ -71,17 +80,9 @@
   <h3>Ruby Dibble</h3>
   <span>Mezzo-soprano</span>
 </a>
-<a href="/artists/theo-hoffman/" class="artist">
-  <h3>Theo Hoffman</h3>
-  <span>Baritone</span>
-</a>
-<a href="/artists/szymon-komasa/" class="artist">
-  <h3>Szymon Komasa</h3>
-  <span>Baritone</span>
-</a>
-<a href="/artists/matthew-anchel/" class="artist">
-  <h3>Matthew Anchel</h3>
-  <span>Bass</span>
+<a href="/artists/theresa-kronthaler/" class="artist">
+  <h3>Theresa Kronthaler</h3>
+  <span>Mezzo-soprano</span>
 </a>
   </div>
 </section>
@@ -100,5 +101,16 @@
         </div>
       </div>
     </footer>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", function(user) {
+          if (!user) {
+            window.netlifyIdentity.on("login", function() {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>
