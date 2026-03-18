@@ -16,6 +16,15 @@
       "website": ""
     },
     {
+      "name": "Tom Goossens",
+      "slug": "tom-goossens",
+      "voiceType": "Director",
+      "photo": {
+        "path": "/assets/people/goossens.jpg"
+      },
+      "website": "https://www.deschonecompanie.be/"
+    },
+    {
       "slug": "marcus-shields",
       "name": "Marcus Shields",
       "voiceType": "Director",
