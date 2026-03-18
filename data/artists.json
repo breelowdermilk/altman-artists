@@ -70,21 +70,6 @@
       "website": "http://www.haileyclarksoprano.com/home.html"
     },
     {
-      "slug": "lindsey-reynolds",
-      "name": "Lindsey Reynolds",
-      "voiceType": "Soprano",
-      "location": "",
-      "repertoireHighlights": [],
-      "bio": "",
-      "photo": {
-        "path": "/assets/people/lindsey-reynolds.jpg",
-        "alt": "Portrait of Lindsey Reynolds",
-        "credit": "",
-        "sourceUrl": ""
-      },
-      "website": "https://www.lindseyreynolds-soprano.com/"
-    },
-    {
       "slug": "elizabeth-reiter",
       "name": "Elizabeth Reiter",
       "voiceType": "Soprano",
@@ -98,6 +83,21 @@
         "sourceUrl": "https://data.operabase.com/profiles/c38fa4c8-7897-4141-81d5-718ed3bc3c35/elizabeth-reiter-large.png"
       },
       "website": "https://www.elizabethreiter.com/"
+    },
+    {
+      "slug": "lindsey-reynolds",
+      "name": "Lindsey Reynolds",
+      "voiceType": "Soprano",
+      "location": "",
+      "repertoireHighlights": [],
+      "bio": "",
+      "photo": {
+        "path": "/assets/people/lindsey-reynolds.jpg",
+        "alt": "Portrait of Lindsey Reynolds",
+        "credit": "",
+        "sourceUrl": ""
+      },
+      "website": "https://www.lindseyreynolds-soprano.com/"
     },
     {
       "slug": "natasha-te-rupe-wilson",
