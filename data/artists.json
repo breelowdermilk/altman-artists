@@ -1,201 +1,201 @@
 {
   "artists": [
     {
-    "slug": "barbora-horakova",
-    "name": "Barbora Horáková",
-    "voiceType": "Director",
-    "location": "",
-    "repertoireHighlights": [],
-    "bio": "",
-    "photo": {
-      "path": "/assets/people/barbora-horakova.jpg",
-      "alt": "Portrait of Barbora Horáková",
-      "credit": "Operabase",
-      "sourceUrl": "https://data.operabase.com/profiles/24111922-da77-453c-8722-32123e4bff67/barbora-horakova-large.png"
+      "slug": "barbora-horakova",
+      "name": "Barbora Horáková",
+      "voiceType": "Director",
+      "location": "",
+      "repertoireHighlights": [],
+      "bio": "",
+      "photo": {
+        "path": "/assets/people/barbora-horakova.jpg",
+        "alt": "Portrait of Barbora Horáková",
+        "credit": "Operabase",
+        "sourceUrl": "https://data.operabase.com/profiles/24111922-da77-453c-8722-32123e4bff67/barbora-horakova-large.png"
+      },
+      "website": ""
     },
-    "website": ""
-  },
-  {
-    "slug": "marcus-shields",
-    "name": "Marcus Shields",
-    "voiceType": "Director",
-    "location": "",
-    "repertoireHighlights": [],
-    "bio": "",
-    "photo": {
-      "path": "/assets/people/marcus-shields.jpg",
-      "alt": "Portrait of Marcus Shields",
-      "credit": "",
-      "sourceUrl": ""
+    {
+      "slug": "marcus-shields",
+      "name": "Marcus Shields",
+      "voiceType": "Director",
+      "location": "",
+      "repertoireHighlights": [],
+      "bio": "",
+      "photo": {
+        "path": "/assets/people/marcus-shields.jpg",
+        "alt": "Portrait of Marcus Shields",
+        "credit": "",
+        "sourceUrl": ""
+      },
+      "website": "https://www.marcusshields.com/"
     },
-    "website": "https://www.marcusshields.com/"
-  },
-  {
-    "slug": "nicole-chevalier",
-    "name": "Nicole Chevalier",
-    "voiceType": "Soprano",
-    "location": "",
-    "repertoireHighlights": [],
-    "bio": "",
-    "photo": {
-      "path": "/assets/people/nicole-chevalier.jpg",
-      "alt": "Portrait of Nicole Chevalier",
-      "credit": "Operabase",
-      "sourceUrl": "https://data.operabase.com/profiles/88ee12d3-8a83-43bc-8a4f-61cf99c44fda/nicole-chevalier-large.png"
+    {
+      "slug": "nicole-chevalier",
+      "name": "Nicole Chevalier",
+      "voiceType": "Soprano",
+      "location": "",
+      "repertoireHighlights": [],
+      "bio": "",
+      "photo": {
+        "path": "/assets/people/nicole-chevalier.jpg",
+        "alt": "Portrait of Nicole Chevalier",
+        "credit": "Operabase",
+        "sourceUrl": "https://data.operabase.com/profiles/88ee12d3-8a83-43bc-8a4f-61cf99c44fda/nicole-chevalier-large.png"
+      },
+      "website": ""
     },
-    "website": ""
-  },
-  {
-    "slug": "natasha-te-rupe-wilson",
-    "name": "Natasha Te Rupe Wilson",
-    "voiceType": "Soprano",
-    "location": "",
-    "repertoireHighlights": [],
-    "bio": "",
-    "photo": {
-      "path": "/assets/people/natasha-te-rupe-wilson.jpg",
-      "alt": "Portrait of Natasha Te Rupe Wilson",
-      "credit": "",
-      "sourceUrl": ""
+    {
+      "slug": "hailey-clark",
+      "name": "Hailey Clark",
+      "voiceType": "Soprano",
+      "location": "",
+      "repertoireHighlights": [],
+      "bio": "",
+      "photo": {
+        "path": "/assets/people/hailey-clark.jpg",
+        "alt": "Portrait of Hailey Clark",
+        "credit": "Operabase",
+        "sourceUrl": "https://data.operabase.com/profiles/f2dfdd80-c87d-4daf-9956-390a82778dba/hailey-clark-large.png"
+      },
+      "website": "http://www.haileyclarksoprano.com/home.html"
     },
-    "website": "https://www.natashaterupewilson.com"
-  },
-  {
-    "slug": "andrew-turner",
-    "name": "Andrew Turner",
-    "voiceType": "Tenor",
-    "location": "",
-    "repertoireHighlights": [],
-    "bio": "",
-    "photo": {
-      "path": "/assets/people/andrew-turner.jpg",
-      "alt": "Portrait of Andrew Turner",
-      "credit": "",
-      "sourceUrl": ""
+    {
+      "slug": "lindsey-reynolds",
+      "name": "Lindsey Reynolds",
+      "voiceType": "Soprano",
+      "location": "",
+      "repertoireHighlights": [],
+      "bio": "",
+      "photo": {
+        "path": "/assets/people/lindsey-reynolds.jpg",
+        "alt": "Portrait of Lindsey Reynolds",
+        "credit": "",
+        "sourceUrl": ""
+      },
+      "website": "https://www.lindseyreynolds-soprano.com/"
     },
-    "website": "https://app.stagetime.com/artists/web_mode/andrew-turner"
-  },
-  {
-    "slug": "hailey-clark",
-    "name": "Hailey Clark",
-    "voiceType": "Soprano",
-    "location": "",
-    "repertoireHighlights": [],
-    "bio": "",
-    "photo": {
-      "path": "/assets/people/hailey-clark.jpg",
-      "alt": "Portrait of Hailey Clark",
-      "credit": "Operabase",
-      "sourceUrl": "https://data.operabase.com/profiles/f2dfdd80-c87d-4daf-9956-390a82778dba/hailey-clark-large.png"
+    {
+      "slug": "elizabeth-reiter",
+      "name": "Elizabeth Reiter",
+      "voiceType": "Soprano",
+      "location": "",
+      "repertoireHighlights": [],
+      "bio": "",
+      "photo": {
+        "path": "/assets/people/elizabeth-reiter.png",
+        "alt": "Portrait of Elizabeth Reiter",
+        "credit": "Operabase",
+        "sourceUrl": "https://data.operabase.com/profiles/c38fa4c8-7897-4141-81d5-718ed3bc3c35/elizabeth-reiter-large.png"
+      },
+      "website": "https://www.elizabethreiter.com/"
     },
-    "website": "http://www.haileyclarksoprano.com/home.html"
-  },
-  {
-    "slug": "lindsey-reynolds",
-    "name": "Lindsey Reynolds",
-    "voiceType": "Soprano",
-    "location": "",
-    "repertoireHighlights": [],
-    "bio": "",
-    "photo": {
-      "path": "/assets/people/lindsey-reynolds.jpg",
-      "alt": "Portrait of Lindsey Reynolds",
-      "credit": "",
-      "sourceUrl": ""
+    {
+      "slug": "natasha-te-rupe-wilson",
+      "name": "Natasha Te Rupe Wilson",
+      "voiceType": "Soprano",
+      "location": "",
+      "repertoireHighlights": [],
+      "bio": "",
+      "photo": {
+        "path": "/assets/people/natasha-te-rupe-wilson.jpg",
+        "alt": "Portrait of Natasha Te Rupe Wilson",
+        "credit": "",
+        "sourceUrl": ""
+      },
+      "website": "https://www.natashaterupewilson.com"
     },
-    "website": "https://www.lindseyreynolds-soprano.com/"
-  },
-  {
-    "slug": "elizabeth-reiter",
-    "name": "Elizabeth Reiter",
-    "voiceType": "Soprano",
-    "location": "",
-    "repertoireHighlights": [],
-    "bio": "",
-    "photo": {
-      "path": "/assets/people/elizabeth-reiter.png",
-      "alt": "Portrait of Elizabeth Reiter",
-      "credit": "Operabase",
-      "sourceUrl": "https://data.operabase.com/profiles/c38fa4c8-7897-4141-81d5-718ed3bc3c35/elizabeth-reiter-large.png"
+    {
+      "bio": "",
+      "name": "Ruby Dibble",
+      "slug": "ruby-dibble",
+      "voiceType": "Mezzo-soprano",
+      "photo": {
+        "path": "/assets/people/ruby-dibble.png",
+        "alt": "Portrait of Ruby Dibble",
+        "credit": "Operabase",
+        "sourceUrl": "https://data.operabase.com/profiles/76a2f707-f1ae-45d5-89e3-b0279336067d/ruby-dibble-large.png"
+      },
+      "location": "",
+      "repertoireHighlights": [],
+      "website": "https://www.rubydibble.com/",
+      "managementNotes": "* Co-managed by Sam Levine at TACT."
     },
-    "website": "https://www.elizabethreiter.com/"
-  },
-  {
-    "slug": "ruby-dibble",
-    "name": "Ruby Dibble",
-    "voiceType": "Mezzo-soprano",
-    "location": "",
-    "repertoireHighlights": [],
-    "bio": "",
-    "managementNotes": "* Co-managed by Sam Levine at TACT.",
-    "photo": {
-      "path": "/assets/people/ruby-dibble.png",
-      "alt": "Portrait of Ruby Dibble",
-      "credit": "Operabase",
-      "sourceUrl": "https://data.operabase.com/profiles/76a2f707-f1ae-45d5-89e3-b0279336067d/ruby-dibble-large.png"
+    {
+      "slug": "theresa-kronthaler",
+      "name": "Theresa Kronthaler",
+      "voiceType": "Mezzo-soprano",
+      "location": "",
+      "repertoireHighlights": [],
+      "bio": "",
+      "photo": {
+        "path": "/assets/people/theresa-kronthaler.png",
+        "alt": "Portrait of Theresa Kronthaler",
+        "credit": "",
+        "sourceUrl": ""
+      },
+      "website": "https://www.theresakronthaler.com/en/home-en"
     },
-    "website": "https://www.rubydibble.com/"
-  },
-  {
-    "slug": "theresa-kronthaler",
-    "name": "Theresa Kronthaler",
-    "voiceType": "Mezzo-soprano",
-    "location": "",
-    "repertoireHighlights": [],
-    "bio": "",
-    "photo": {
-      "path": "/assets/people/theresa-kronthaler.png",
-      "alt": "Portrait of Theresa Kronthaler",
-      "credit": "",
-      "sourceUrl": ""
+    {
+      "slug": "andrew-turner",
+      "name": "Andrew Turner",
+      "voiceType": "Tenor",
+      "location": "",
+      "repertoireHighlights": [],
+      "bio": "",
+      "photo": {
+        "path": "/assets/people/andrew-turner.jpg",
+        "alt": "Portrait of Andrew Turner",
+        "credit": "",
+        "sourceUrl": ""
+      },
+      "website": "https://app.stagetime.com/artists/web_mode/andrew-turner"
     },
-    "website": "https://www.theresakronthaler.com/en/home-en"
-  },
-  {
-    "slug": "theo-hoffman",
-    "name": "Theo Hoffman",
-    "voiceType": "Baritone",
-    "location": "",
-    "repertoireHighlights": [],
-    "bio": "",
-    "managementNotes": "+ Outside of France, Belgium, Luxembourg, Monaco, Geneva, Lausanne, Verbier, and Biel-Solothum.",
-    "photo": {
-      "path": "/assets/people/theo-hoffman.png",
-      "alt": "Portrait of Theo Hoffman",
-      "credit": "Operabase",
-      "sourceUrl": "https://data.operabase.com/profiles/186e0787-1a7e-4d71-88bf-8ea0b3a506bd/theo-hoffman-large.png"
+    {
+      "bio": "",
+      "name": "Theo Hoffman",
+      "slug": "theo-hoffman",
+      "voiceType": "Baritone",
+      "photo": {
+        "path": "/assets/people/theo-hoffman.png",
+        "alt": "Portrait of Theo Hoffman",
+        "credit": "Operabase",
+        "sourceUrl": "https://data.operabase.com/profiles/186e0787-1a7e-4d71-88bf-8ea0b3a506bd/theo-hoffman-large.png"
+      },
+      "location": "",
+      "repertoireHighlights": [],
+      "website": "https://www.theo-hoffman.com/",
+      "managementNotes": "+ Outside of France, Belgium, Luxembourg, Monaco, Geneva, Lausanne, Verbier, and Biel-Solothum."
     },
-    "website": "https://www.theo-hoffman.com/"
-  },
-  {
-    "slug": "szymon-komasa",
-    "name": "Szymon Komasa",
-    "voiceType": "Baritone",
-    "location": "",
-    "repertoireHighlights": [],
-    "bio": "",
-    "photo": {
-      "path": "/assets/people/szymon-komasa.jpg",
-      "alt": "Portrait of Szymon Komasa",
-      "credit": "",
-      "sourceUrl": ""
+    {
+      "slug": "szymon-komasa",
+      "name": "Szymon Komasa",
+      "voiceType": "Baritone",
+      "location": "",
+      "repertoireHighlights": [],
+      "bio": "",
+      "photo": {
+        "path": "/assets/people/szymon-komasa.jpg",
+        "alt": "Portrait of Szymon Komasa",
+        "credit": "",
+        "sourceUrl": ""
+      },
+      "website": ""
     },
-    "website": ""
-  },
-  {
-    "slug": "matthew-anchel",
-    "name": "Matthew Anchel",
-    "voiceType": "Bass",
-    "location": "",
-    "repertoireHighlights": [],
-    "bio": "",
-    "photo": {
-      "path": "/assets/people/matthew-anchel.jpg",
-      "alt": "Portrait of Matthew Anchel",
-      "credit": "Operabase",
-      "sourceUrl": "https://data.operabase.com/profiles/14a8cdce-6630-40ac-be42-5caa108efe1a/matthew-anchel-large.png"
-    },
-    "website": "https://www.matthewanchel.com/"
+    {
+      "slug": "matthew-anchel",
+      "name": "Matthew Anchel",
+      "voiceType": "Bass",
+      "location": "",
+      "repertoireHighlights": [],
+      "bio": "",
+      "photo": {
+        "path": "/assets/people/matthew-anchel.jpg",
+        "alt": "Portrait of Matthew Anchel",
+        "credit": "Operabase",
+        "sourceUrl": "https://data.operabase.com/profiles/14a8cdce-6630-40ac-be42-5caa108efe1a/matthew-anchel-large.png"
+      },
+      "website": "https://www.matthewanchel.com/"
     }
   ]
 }
