@@ -1,0 +1,107 @@
+name: Optimize Headshots
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/assets/people/**'
+
+jobs:
+  optimize:
+    runs-on: macos-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Find oversized or PNG images
+        id: check
+        run: |
+          needs_work=false
+          for img in src/assets/people/*.{jpg,jpeg,png,JPG,JPEG,PNG}; do
+            [ -f "$img" ] || continue
+            # Skip placeholder SVG
+            [[ "$img" == *.svg ]] && continue
+
+            ext="${img##*.}"
+            ext_lower=$(echo "$ext" | tr '[:upper:]' '[:lower:]')
+
+            # Flag PNGs for conversion
+            if [[ "$ext_lower" == "png" ]]; then
+              echo "PNG needs conversion: $img"
+              needs_work=true
+              continue
+            fi
+
+            # Check dimensions
+            width=$(sips -g pixelWidth "$img" | awk '/pixelWidth/{print $2}')
+            height=$(sips -g pixelHeight "$img" | awk '/pixelHeight/{print $2}')
+            if [ "$width" -gt 1200 ] || [ "$height" -gt 1500 ]; then
+              echo "Oversized (${width}x${height}): $img"
+              needs_work=true
+            fi
+          done
+
+          echo "needs_work=$needs_work" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Node.js
+        if: steps.check.outputs.needs_work == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Optimize images
+        if: steps.check.outputs.needs_work == 'true'
+        run: |
+          for img in src/assets/people/*.{jpg,jpeg,png,JPG,JPEG,PNG}; do
+            [ -f "$img" ] || continue
+            [[ "$img" == *.svg ]] && continue
+
+            filename=$(basename "$img")
+            name="${filename%.*}"
+            ext="${filename##*.}"
+            ext_lower=$(echo "$ext" | tr '[:upper:]' '[:lower:]')
+
+            # Derive slug from filename
+            slug="$name"
+
+            # Check if already optimized (1200x1500 JPG)
+            if [[ "$ext_lower" == "jpg" || "$ext_lower" == "jpeg" ]]; then
+              width=$(sips -g pixelWidth "$img" | awk '/pixelWidth/{print $2}')
+              height=$(sips -g pixelHeight "$img" | awk '/pixelHeight/{print $2}')
+              if [ "$width" -le 1200 ] && [ "$height" -le 1500 ]; then
+                echo "Already optimized: $img"
+                continue
+              fi
+            fi
+
+            echo "Optimizing: $img -> $slug.jpg"
+            node scripts/import-headshot.mjs --src "$img" --slug "$slug" --force
+
+            # Remove original PNG if we converted to JPG
+            if [[ "$ext_lower" == "png" ]]; then
+              rm "$img"
+              echo "Removed original PNG: $img"
+            fi
+          done
+
+      - name: Update JSON paths (PNG -> JPG)
+        if: steps.check.outputs.needs_work == 'true'
+        run: |
+          # Update any remaining .png references to .jpg in data files
+          for f in data/artists.json data/team.json; do
+            if [ -f "$f" ]; then
+              sed -i '' 's|/assets/people/\([^"]*\)\.png|/assets/people/\1.jpg|g' "$f"
+            fi
+          done
+
+      - name: Commit optimized images
+        if: steps.check.outputs.needs_work == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/assets/people/ data/artists.json data/team.json
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "Auto-optimize headshot images (resize + PNG→JPG)"
+          git push
