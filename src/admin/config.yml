@@ -90,7 +90,7 @@ collections:
                     name: "path"
                     widget: "image"
                     required: false
-                    hint: "Upload a headshot. Recommended size: 1200×1500px (4:5 ratio)."
+                    hint: "Upload a headshot (JPG, under 2MB). Photos are automatically optimized during build. Ideal size: 1200×1500px portrait."
                     media_folder: "/src/assets/people"
                     public_folder: "/assets/people"
 

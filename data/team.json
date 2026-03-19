@@ -6,7 +6,7 @@
     "email": "zach@altmanartists.com",
     "bio": "",
     "photo": {
-      "path": "/assets/people/zachary-altman.png",
+      "path": "/assets/people/zachary-altman.jpg",
       "alt": "Portrait of Zachary Altman",
       "credit": "Operabase",
       "sourceUrl": "https://data.operabase.com/profiles/447b4dbe-99c1-4eea-8557-5352b51e655d/zachary-altman-large.png"
@@ -19,7 +19,7 @@
     "email": "summer@altmanartists.com",
     "bio": "",
     "photo": {
-      "path": "/assets/people/summer-hassan.png",
+      "path": "/assets/people/summer-hassan.jpg",
       "alt": "Portrait of Summer Hassan",
       "credit": "",
       "sourceUrl": ""
@@ -32,7 +32,7 @@
     "email": "Tyler@altmanartists.com",
     "bio": "",
     "photo": {
-      "path": "/assets/people/tyler-zimmerman.png",
+      "path": "/assets/people/tyler-zimmerman.jpg",
       "alt": "Portrait of Tyler Zimmerman",
       "credit": "",
       "sourceUrl": ""

@@ -73,7 +73,9 @@ function ensureTrailingSlash(p) {
 }
 
 async function assetExistsInDist(urlPath) {
-  if (!urlPath?.startsWith("/")) return false;
+  if (!urlPath) return false;
+  if (urlPath.startsWith("http://") || urlPath.startsWith("https://")) return true;
+  if (!urlPath.startsWith("/")) return false;
   const filePath = path.join(distDir, urlPath);
   try {
     await fs.access(filePath);

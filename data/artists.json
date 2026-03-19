@@ -16,11 +16,17 @@
       "website": ""
     },
     {
-      "name": "Tom Goossens",
       "slug": "tom-goossens",
+      "name": "Tom Goossens",
       "voiceType": "Director",
+      "location": "",
+      "repertoireHighlights": [],
+      "bio": "",
       "photo": {
-        "path": "/assets/people/goossens.jpg"
+        "path": "/assets/people/tom-goossens.jpg",
+        "alt": "Portrait of Tom Goossens",
+        "credit": "",
+        "sourceUrl": ""
       },
       "website": "https://www.deschonecompanie.be/"
     },
@@ -77,7 +83,7 @@
       "repertoireHighlights": [],
       "bio": "",
       "photo": {
-        "path": "/assets/people/elizabeth-reiter.png",
+        "path": "/assets/people/elizabeth-reiter.jpg",
         "alt": "Portrait of Elizabeth Reiter",
         "credit": "Operabase",
         "sourceUrl": "https://data.operabase.com/profiles/c38fa4c8-7897-4141-81d5-718ed3bc3c35/elizabeth-reiter-large.png"
@@ -115,20 +121,20 @@
       "website": "https://www.natashaterupewilson.com"
     },
     {
-      "bio": "",
-      "name": "Ruby Dibble",
       "slug": "ruby-dibble",
+      "name": "Ruby Dibble",
       "voiceType": "Mezzo-soprano",
+      "location": "",
+      "repertoireHighlights": [],
+      "bio": "",
+      "managementNotes": "* Co-managed by Sam Levine at TACT.",
       "photo": {
-        "path": "/assets/people/ruby-dibble.png",
+        "path": "/assets/people/ruby-dibble.jpg",
         "alt": "Portrait of Ruby Dibble",
         "credit": "Operabase",
         "sourceUrl": "https://data.operabase.com/profiles/76a2f707-f1ae-45d5-89e3-b0279336067d/ruby-dibble-large.png"
       },
-      "location": "",
-      "repertoireHighlights": [],
-      "website": "https://www.rubydibble.com/",
-      "managementNotes": "* Co-managed by Sam Levine at TACT."
+      "website": "https://www.rubydibble.com/"
     },
     {
       "slug": "theresa-kronthaler",
@@ -138,7 +144,7 @@
       "repertoireHighlights": [],
       "bio": "",
       "photo": {
-        "path": "/assets/people/theresa-kronthaler.png",
+        "path": "/assets/people/theresa-kronthaler.jpg",
         "alt": "Portrait of Theresa Kronthaler",
         "credit": "",
         "sourceUrl": ""
@@ -161,20 +167,20 @@
       "website": "https://app.stagetime.com/artists/web_mode/andrew-turner"
     },
     {
-      "bio": "",
-      "name": "Theo Hoffman",
       "slug": "theo-hoffman",
+      "name": "Theo Hoffman",
       "voiceType": "Baritone",
+      "location": "",
+      "repertoireHighlights": [],
+      "bio": "",
+      "managementNotes": "+ Outside of France, Belgium, Luxembourg, Monaco, Geneva, Lausanne, Verbier, and Biel-Solothum.",
       "photo": {
-        "path": "/assets/people/theo-hoffman.png",
+        "path": "/assets/people/theo-hoffman.jpg",
         "alt": "Portrait of Theo Hoffman",
         "credit": "Operabase",
         "sourceUrl": "https://data.operabase.com/profiles/186e0787-1a7e-4d71-88bf-8ea0b3a506bd/theo-hoffman-large.png"
       },
-      "location": "",
-      "repertoireHighlights": [],
-      "website": "https://www.theo-hoffman.com/",
-      "managementNotes": "+ Outside of France, Belgium, Luxembourg, Monaco, Geneva, Lausanne, Verbier, and Biel-Solothum."
+      "website": "https://www.theo-hoffman.com/"
     },
     {
       "slug": "szymon-komasa",
