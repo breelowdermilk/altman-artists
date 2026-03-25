@@ -1,15 +1,6 @@
 {
   "artists": [
     {
-      "name": "Mariana Souza",
-      "slug": "mariana-souza",
-      "photo": {
-        "path": "/assets/people/mariana-souza.jpg",
-        "sourceUrl": ""
-      },
-      "website": "https://www.marianasouza.com/de"
-    },
-    {
       "slug": "barbora-horakova",
       "name": "Barbora Horáková",
       "voiceType": "Director",
@@ -53,6 +44,15 @@
         "sourceUrl": ""
       },
       "website": "https://www.marcusshields.com/"
+    },
+    {
+      "name": "Mariana Souza",
+      "slug": "mariana-souza",
+      "photo": {
+        "path": "/assets/people/mariana-souza.jpg",
+        "sourceUrl": ""
+      },
+      "website": "https://www.marianasouza.com/de"
     },
     {
       "slug": "nicole-chevalier",
