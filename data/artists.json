@@ -1,21 +1,6 @@
 {
   "artists": [
     {
-      "slug": "barbora-horakova",
-      "name": "Barbora Horáková",
-      "voiceType": "Director",
-      "location": "",
-      "repertoireHighlights": [],
-      "bio": "",
-      "photo": {
-        "path": "/assets/people/barbora-horakova.jpg",
-        "alt": "Portrait of Barbora Horáková",
-        "credit": "Operabase",
-        "sourceUrl": "https://data.operabase.com/profiles/24111922-da77-453c-8722-32123e4bff67/barbora-horakova-large.png"
-      },
-      "website": ""
-    },
-    {
       "slug": "tom-goossens",
       "name": "Tom Goossens",
       "voiceType": "Director",
@@ -29,6 +14,21 @@
         "sourceUrl": ""
       },
       "website": "https://www.deschonecompanie.be/"
+    },
+    {
+      "slug": "barbora-horakova",
+      "name": "Barbora Horáková",
+      "voiceType": "Director",
+      "location": "",
+      "repertoireHighlights": [],
+      "bio": "",
+      "photo": {
+        "path": "/assets/people/barbora-horakova.jpg",
+        "alt": "Portrait of Barbora Horáková",
+        "credit": "Operabase",
+        "sourceUrl": "https://data.operabase.com/profiles/24111922-da77-453c-8722-32123e4bff67/barbora-horakova-large.png"
+      },
+      "website": ""
     },
     {
       "slug": "marcus-shields",
