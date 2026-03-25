@@ -1,6 +1,15 @@
 {
   "artists": [
     {
+      "name": "Mariana Souza",
+      "slug": "mariana-souza",
+      "photo": {
+        "path": "/assets/people/mariana-souza.jpg",
+        "sourceUrl": ""
+      },
+      "website": "https://www.marianasouza.com/de"
+    },
+    {
       "slug": "barbora-horakova",
       "name": "Barbora Horáková",
       "voiceType": "Director",
@@ -121,20 +130,20 @@
       "website": "https://www.natashaterupewilson.com"
     },
     {
-      "slug": "ruby-dibble",
-      "name": "Ruby Dibble",
-      "voiceType": "Mezzo-soprano",
-      "location": "",
-      "repertoireHighlights": [],
       "bio": "",
-      "managementNotes": "* Co-managed by Sam Levine at TACT.",
+      "name": "Ruby Dibble",
+      "slug": "ruby-dibble",
+      "voiceType": "Mezzo-soprano",
       "photo": {
         "path": "/assets/people/ruby-dibble.jpg",
         "alt": "Portrait of Ruby Dibble",
         "credit": "Operabase",
         "sourceUrl": "https://data.operabase.com/profiles/76a2f707-f1ae-45d5-89e3-b0279336067d/ruby-dibble-large.png"
       },
-      "website": "https://www.rubydibble.com/"
+      "location": "",
+      "repertoireHighlights": [],
+      "website": "https://www.rubydibble.com/",
+      "managementNotes": "* Co-managed by Sam Levine at TACT."
     },
     {
       "slug": "theresa-kronthaler",
@@ -167,20 +176,20 @@
       "website": "https://app.stagetime.com/artists/web_mode/andrew-turner"
     },
     {
-      "slug": "theo-hoffman",
-      "name": "Theo Hoffman",
-      "voiceType": "Baritone",
-      "location": "",
-      "repertoireHighlights": [],
       "bio": "",
-      "managementNotes": "+ Outside of France, Belgium, Luxembourg, Monaco, Geneva, Lausanne, Verbier, and Biel-Solothum.",
+      "name": "Theo Hoffman",
+      "slug": "theo-hoffman",
+      "voiceType": "Baritone",
       "photo": {
         "path": "/assets/people/theo-hoffman.jpg",
         "alt": "Portrait of Theo Hoffman",
         "credit": "Operabase",
         "sourceUrl": "https://data.operabase.com/profiles/186e0787-1a7e-4d71-88bf-8ea0b3a506bd/theo-hoffman-large.png"
       },
-      "website": "https://www.theo-hoffman.com/"
+      "location": "",
+      "repertoireHighlights": [],
+      "website": "https://www.theo-hoffman.com/",
+      "managementNotes": "+ Outside of France, Belgium, Luxembourg, Monaco, Geneva, Lausanne, Verbier, and Biel-Solothum."
     },
     {
       "slug": "szymon-komasa",
