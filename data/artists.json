@@ -6,7 +6,7 @@
       "voiceType": "Director",
       "location": "",
       "repertoireHighlights": [],
-      "bio": "",
+      "bio": "Tom made his mainstage debut with productions of La traviata (Wiesbaden) and Don Giovanni and Nozze di Figaro (Opera Ballet Vlaanderen). He is also the founder and artistic director of DESCHONECOMPANIE, which adapts operas including Rigoletto, Barbiere, and Falstaff.",
       "photo": {
         "path": "/assets/people/tom-goossens.jpg",
         "alt": "Portrait of Tom Goossens",
@@ -21,7 +21,7 @@
       "voiceType": "Director",
       "location": "",
       "repertoireHighlights": [],
-      "bio": "",
+      "bio": "Barbora has created original opera productions at the Wiener Staatsoper, Staatsoper unter der Linden, Den Norske Opera, Dutch National Opera, and English National Opera. Her current season includes new productions of Madama Butterfly (Geneva), Dialogues des Carmelites (Prague), and Fiery Angel (Bremen); recent successes include Peter Grimes (Amsterdam), Katya Kabanova (Bergen), and Benvenuto Cellini (Dresden).",
       "photo": {
         "path": "/assets/people/barbora-horakova.jpg",
         "alt": "Portrait of Barbora Horáková",
@@ -36,7 +36,7 @@
       "voiceType": "Director",
       "location": "",
       "repertoireHighlights": [],
-      "bio": "",
+      "bio": "Marcus has created original projects and opera productions for the Beth Morrison Projects, Catapult Opera, Cincinnati Opera, Wolf Trap Opera, Curtis, Juilliard, and the Merola Opera Program with stagings of Nozze di Figaro, Tosca, Voix Humaine, and La Calisto. He has been a staff stage director at the Metropolitan Opera since 2019.",
       "photo": {
         "path": "/assets/people/marcus-shields.jpg",
         "alt": "Portrait of Marcus Shields",
@@ -52,7 +52,8 @@
         "path": "/assets/people/mariana-souza.jpg",
         "sourceUrl": ""
       },
-      "website": "https://www.marianasouza.com/de"
+      "website": "https://www.marianasouza.com/de",
+      "bio": "Mariana has a long association with the Komische Oper Berlin, where she has choreographed Barrie Kosky’s productions of Die Blume von Hawaii and La Cage aux Folles. Other recent credits include the Berliner Ensemble, Theater Würzburg, and Philhamonie Luxembourg."
     },
     {
       "slug": "nicole-chevalier",
@@ -60,7 +61,7 @@
       "voiceType": "Soprano",
       "location": "",
       "repertoireHighlights": [],
-      "bio": "",
+      "bio": "Nicole's current season includes her acclaimed role debut as Salome in a new production by Evgeny Titov at the Komische Oper Berlin, Agathe (Freischütz) with the American Symphony Orchestra at Carnegie Hall, and Mabel (Pirates of Penzance) in an innovative new production at the Volksoper Wien. One of Europe’s most exciting singing actors, past credits include new productions of Elettra (Idomeneo) directed by Peter Sellars at the Salzburg Festival, Vitellia (Clemenza di Tito) directed by Richard Jones at the Royal Ballet and Opera, and Four Heroines (Hoffmann) directed by Barrie Kosky, for which she received Germany’s prestigious Der Faust award.",
       "photo": {
         "path": "/assets/people/nicole-chevalier.jpg",
         "alt": "Portrait of Nicole Chevalier",
@@ -75,7 +76,7 @@
       "voiceType": "Soprano",
       "location": "",
       "repertoireHighlights": [],
-      "bio": "",
+      "bio": "Hailey makes her role debut as Helena (Ägyptische Helena) at Bard this summer. Recent credits include Freia (Bayreuth), Nedda (San Diego Opera), Contessa, Donna Anna, and Fiordiligi (Palm Beach Opera), and Soprano I (Mahler 8) with Klaus Mäkelä and the Concertgebouw, released on Decca Classics.",
       "photo": {
         "path": "/assets/people/hailey-clark.jpg",
         "alt": "Portrait of Hailey Clark",
@@ -90,7 +91,7 @@
       "voiceType": "Soprano",
       "location": "",
       "repertoireHighlights": [],
-      "bio": "",
+      "bio": "Elizabeth is a member of the Oper Frankfurt ensemble, where her roles have included Tatyana, Vixen, Armida (Rinaldo), and Agnes (Written on Skin). Recent credits include Tatyana (Norwegian National Opera), Susanna (Oper Stuttgart), and Donna Elvira, Vixen, and Blonde (Opera Philadelphia).",
       "photo": {
         "path": "/assets/people/elizabeth-reiter.jpg",
         "alt": "Portrait of Elizabeth Reiter",
@@ -105,7 +106,7 @@
       "voiceType": "Soprano",
       "location": "",
       "repertoireHighlights": [],
-      "bio": "",
+      "bio": "Lindsey recently appeared as the Contessa di Folleville (Viaggio a Reims) and Ashley Devon (Missy Mazzoli’s The Listeners) at Opera Philadelphia and Adina at New Orleans Opera. She has been a member of the Ryan Opera Center at the Lyric Opera of Chicago, an Emerging Artist at Opera Philadelphia, and a Gerdine Young Artist at Opera Theatre St. Louis.",
       "photo": {
         "path": "/assets/people/lindsey-reynolds.jpg",
         "alt": "Portrait of Lindsey Reynolds",
@@ -120,7 +121,7 @@
       "voiceType": "Soprano",
       "location": "",
       "repertoireHighlights": [],
-      "bio": "",
+      "bio": "Natasha is a member of the Staatsoper Stuttgart ensemble, where her roles include Pamina, Micaëla, Zerlina, Oscar and Nannetta. Recent appearances include Susanna and Morgana (Pittsburgh Opera) and Marzelline (Auckland Philharmonia).",
       "photo": {
         "path": "/assets/people/natasha-te-rupe-wilson.jpg",
         "alt": "Portrait of Natasha Te Rupe Wilson",
@@ -130,7 +131,7 @@
       "website": "https://www.natashaterupewilson.com"
     },
     {
-      "bio": "",
+      "bio": "Ruby is a member of the Oper Frankfurt studio. Recent appearances include Blanche (Carmelites) and Sesto (Clemenza di Tito) at Juilliard, and Elle (Voix humaine) and Dorabella at Curtis.",
       "name": "Ruby Dibble",
       "slug": "ruby-dibble",
       "voiceType": "Mezzo-soprano",
@@ -151,7 +152,7 @@
       "voiceType": "Mezzo-soprano",
       "location": "",
       "repertoireHighlights": [],
-      "bio": "",
+      "bio": "Theresa recently made role debuts as Sieglinde (Basel), Agnese (Beatrice di Tenda; Opéra de Paris), Eglantine (Euryanthe; Theater an der Wien), and Clairon (Capriccio; Teatro Real). She was a member of the Komische Oper Berlin and the Deutsche Oper am Rhein as a mezzo-soprano, and is moving into the dramatic soprano repertoire.",
       "photo": {
         "path": "/assets/people/theresa-kronthaler.jpg",
         "alt": "Portrait of Theresa Kronthaler",
@@ -166,7 +167,7 @@
       "voiceType": "Tenor",
       "location": "",
       "repertoireHighlights": [],
-      "bio": "",
+      "bio": "Andrew is a member of the Wiener Staatsoper studio. Recent appearances include Tybalt (Roméo et Juliette) and Gastone (Traviata) at Dallas Opera, Bardolfo (Falstaff; Santa Fe Opera), and Tito (Juilliard).",
       "photo": {
         "path": "/assets/people/andrew-turner.jpg",
         "alt": "Portrait of Andrew Turner",
@@ -176,7 +177,7 @@
       "website": "https://app.stagetime.com/artists/web_mode/andrew-turner"
     },
     {
-      "bio": "",
+      "bio": "Theo recently appeared as Oreste (Iphigénie en Tauride; Opéra Comique and Washington Concert Opera), Papageno (Los Angeles Opera and Israeli Opera), Count Almaviva (Opera Theatre St. Louis and Israeli Opera), Schaunard (Seattle Opera), and Pélleas (National Symphony Orchestra Taiwan). An acclaimed recitalist, Theo regularly appears at the New York Festival of Song amongst other venues.",
       "name": "Theo Hoffman",
       "slug": "theo-hoffman",
       "voiceType": "Baritone",
@@ -197,7 +198,7 @@
       "voiceType": "Baritone",
       "location": "",
       "repertoireHighlights": [],
-      "bio": "",
+      "bio": "Szymon is a member of the Volksoper Wien ensemble where his repertoire includes Papageno, Falke (Fledermaus), and Baron Zeta (Lustige Witwe). Elsewhere he has appeared as Demetrius (Midsummer Night’s Dream; Palermo) and Schaunard (Dresden, Verona).",
       "photo": {
         "path": "/assets/people/szymon-komasa.jpg",
         "alt": "Portrait of Szymon Komasa",
@@ -212,7 +213,7 @@
       "voiceType": "Bass",
       "location": "",
       "repertoireHighlights": [],
-      "bio": "",
+      "bio": "Matthew recently appeared as Bartolo (Barbiere di Siviglia; Stuttgart), Bartolo (Nozze di Figaro; Opera San Jose), Sarastro (Arizona Opera), Sparafucile (Anchorage Opera), and Don Alfonso (Lucrezia Borgia; LOFTOpera).",
       "photo": {
         "path": "/assets/people/matthew-anchel.jpg",
         "alt": "Portrait of Matthew Anchel",
