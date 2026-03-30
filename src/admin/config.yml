@@ -59,6 +59,8 @@ collections:
                   - "Conductor"
                   - "Pianist"
                   - "Composer"
+                  - "Choreographer"
+                  - "Production Company"
                 required: false
                 hint: "Select the artist's primary voice type or discipline."
 

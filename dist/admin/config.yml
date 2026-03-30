@@ -59,6 +59,8 @@ collections:
                   - "Conductor"
                   - "Pianist"
                   - "Composer"
+                  - "Choreographer"
+                  - "Production Company"
                 required: false
                 hint: "Select the artist's primary voice type or discipline."
 
@@ -90,7 +92,7 @@ collections:
                     name: "path"
                     widget: "image"
                     required: false
-                    hint: "Upload a headshot. Recommended size: 1200×1500px (4:5 ratio)."
+                    hint: "Upload a portrait headshot as JPG. To optimize first, go to squoosh.app → Resize: 1200×1500px → Compress: MozJPEG, quality 85. Photos are also auto-optimized on upload."
                     media_folder: "/src/assets/people"
                     public_folder: "/assets/people"
 
